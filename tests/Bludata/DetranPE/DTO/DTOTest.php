@@ -29,11 +29,12 @@ STUBCLASS;
 
     /**
      * @covers \Bludata\DetranPE\DTO\DTO::__call
+     *
      * @uses \Bludata\DetranPE\Exceptions\MethodNotExistsException
      */
     public function testGetAndSetFooAttribute()
     {
-        $stubObject = new \Bludata\Tests\DetranPE\DTO\StubDTO;
+        $stubObject = new \Bludata\Tests\DetranPE\DTO\StubDTO();
         $this->assertObjectHasAttribute('foo', $stubObject);
         $this->assertSame($stubObject, $stubObject->setFoo('bar'));
         $this->assertEquals('bar', $stubObject->getFoo('bar'));
@@ -41,12 +42,13 @@ STUBCLASS;
 
     /**
      * @covers \Bludata\DetranPE\DTO\DTO::__call
+     *
      * @uses \Bludata\DetranPE\Exceptions\MethodNotExistsException
      * @expectedException \Bludata\DetranPE\Exceptions\MethodNotExistsException
      */
     public function testCallAMethodThatDoesntExists()
     {
-        $stubObject = new \Bludata\Tests\DetranPE\DTO\StubDTO;
+        $stubObject = new \Bludata\Tests\DetranPE\DTO\StubDTO();
         $stubObject->callingAMethodThatDoesntExists();
     }
 }

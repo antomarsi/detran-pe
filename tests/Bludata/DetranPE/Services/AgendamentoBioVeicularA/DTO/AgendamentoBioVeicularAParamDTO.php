@@ -2,16 +2,16 @@
 
 namespace Bludata\Tests\DetranPE\Services\AgendamentoBioVeicularS\DTO;
 
-use TestCase;
 use Bludata\DetranPE\Services\AgendamentoBioVeicularS\DTO\AgendamentoBioVeicularSParamDTO;
+use TestCase;
 
-class AgendamentoBioVeicularSParamDTOTest extends TestCase
+class AgendamentoBioVeicularAParamDTO extends TestCase
 {
     protected $dto;
 
     public function setUp()
     {
-        $this->dto = new AgendamentoBioVeicularSParamDTO;
+        $this->dto = new AgendamentoBioVeicularSParamDTO();
     }
 
     public function tearDown()
@@ -24,7 +24,7 @@ class AgendamentoBioVeicularSParamDTOTest extends TestCase
         return [
             ['numeroProcesso'],
             ['categoria'],
-            ['disponibilidade']
+            ['disponibilidade'],
         ];
     }
 

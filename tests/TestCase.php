@@ -1,16 +1,15 @@
 <?php
 
-use PHPUnit\Framework\TestCase as ParentTestCase;
-use Faker\Factory;
-
-use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoDTO;
-use Bludata\DetranPE\Services\AutenticaCliente\AutenticaClienteService;
 use Bludata\DetranPE\Clients\SoapServiceClient;
+use Bludata\DetranPE\Services\AutenticaCliente\AutenticaClienteService;
+use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoDTO;
+use Faker\Factory;
+use PHPUnit\Framework\TestCase as ParentTestCase;
 
 class TestCase extends ParentTestCase
 {
     /**
-     * Factory
+     * Factory.
      */
     protected $faker;
 
@@ -39,9 +38,9 @@ class TestCase extends ParentTestCase
         $options = $this->getSoapServiceClientOptions();
         $authSoapClient = new SoapClient($this->authWsdlFile());
         $authSoapServiceCliente = new SoapServiceClient($authSoapClient, $options);
-        $authService = new AutenticaClienteService;
+        $authService = new AutenticaClienteService();
 
-        $autenticacao= new AutenticacaoDTO;
+        $autenticacao = new AutenticacaoDTO();
         $autenticacao->setCodigoCliente('BLUDATA');
         $autenticacao->setCodigoServico('wsProcessoRenach');
 
@@ -58,12 +57,11 @@ class TestCase extends ParentTestCase
     {
         return [
             'soap_version' => SOAP_1_2,
-            'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-            'encoding' => 'UTF-8',
-            'trace' => 1,
-            'exceptions' => true,
-            'cache_wsdl' => WSDL_CACHE_NONE
+            'compression'  => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
+            'encoding'     => 'UTF-8',
+            'trace'        => 1,
+            'exceptions'   => true,
+            'cache_wsdl'   => WSDL_CACHE_NONE,
         ];
-
     }
 }

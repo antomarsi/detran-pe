@@ -4,10 +4,10 @@ namespace Bludata\DetranPE\Services\AgendamentoBioVeicularA;
 
 use Bludata\DetranPE\Services\Service;
 
-class ExaminadoresBioVeicularAService extends Service
+class ExaminadoresBioVeicularSService extends Service
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {
@@ -15,7 +15,7 @@ class ExaminadoresBioVeicularAService extends Service
     }
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getParamDTOName()
     {
@@ -23,7 +23,7 @@ class ExaminadoresBioVeicularAService extends Service
     }
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseDTOName()
     {

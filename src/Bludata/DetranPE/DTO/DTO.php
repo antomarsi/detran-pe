@@ -2,8 +2,8 @@
 
 namespace Bludata\DetranPE\DTO;
 
-use Bludata\Common\Traits\AttributesTrait;
 use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Traits\AttributesTrait;
 use Bludata\DetranPE\Exceptions\MethodNotExistsException;
 use Bludata\DetranPE\Interfaces\DTOInterface;
 
@@ -27,6 +27,7 @@ abstract class DTO implements DTOInterface
             $attribute = lcfirst(substr($name, 3));
             if (property_exists($this, $attribute)) {
                 $this->$attribute = array_shift($args);
+
                 return $this;
             }
         }

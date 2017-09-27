@@ -11,14 +11,14 @@ use Bludata\Common\Annotations\XML\Field;
 class ErroDTO extends DTO
 {
     /**
-     * Código do erro
+     * Código do erro.
      *
      * @Field(name="nErro")
      */
     protected $codigo;
 
     /**
-     * Descrição do erro
+     * Descrição do erro.
      *
      * @Field(name="sErro")
      */

@@ -8,6 +8,7 @@ class HelpersTest extends TestCase
 {
     /**
      * @covers ::detranpe_wsdl_processorenach2_file
+     *
      * @uses ::detranpe_storage_path
      * @uses ::detranpe_str_startwith_directory_separator
      * @uses ::detranpe_wsdl_path
@@ -22,6 +23,7 @@ class HelpersTest extends TestCase
 
     /**
      * @covers ::detranpe_wsdl_autenticacao2_file
+     *
      * @uses ::detranpe_storage_path
      * @uses ::detranpe_str_startwith_directory_separator
      * @uses ::detranpe_wsdl_path
@@ -36,6 +38,7 @@ class HelpersTest extends TestCase
 
     /**
      * @covers ::detranpe_wsdl_processorenach_file
+     *
      * @uses ::detranpe_wsdl_processorenach2_file
      * @uses ::detranpe_storage_path
      * @uses ::detranpe_str_startwith_directory_separator
@@ -51,6 +54,7 @@ class HelpersTest extends TestCase
 
     /**
      * @covers ::detranpe_wsdl_autenticacao_file
+     *
      * @uses ::detranpe_wsdl_autenticacao2_file
      * @uses ::detranpe_storage_path
      * @uses ::detranpe_str_startwith_directory_separator
@@ -76,9 +80,11 @@ class HelpersTest extends TestCase
 
     /**
      * @covers ::detranpe_generate_soap_client
+     *
      * @uses ::detranpe_wsdl_autenticacao_file
      * @uses ::detranpe_soap_client_options
      * @depends testDestrantoWsdlAutenticacaoFile
+     *
      * @uses ::detranpe_wsdl_autenticacao2_file
      * @uses ::detranpe_storage_path
      * @uses ::detranpe_str_startwith_directory_separator
@@ -90,11 +96,13 @@ class HelpersTest extends TestCase
         $wsdlFile = detranpe_wsdl_autenticacao_file();
         $soapClient = detranpe_generate_soap_client($wsdlFile);
         $this->assertInstanceOf('SoapClient', $soapClient);
+
         return $soapClient;
     }
 
     /**
      * @covers ::detranpe_generate_soap_service_client
+     *
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::__construct
      * @uses ::detranpe_soap_client_options
      * @uses ::detranpe_generate_soap_client

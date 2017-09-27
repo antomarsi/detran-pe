@@ -7,17 +7,17 @@ use Bludata\DetranPE\Interfaces\ServiceInterface;
 abstract class Service implements ServiceInterface
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     abstract public function getName();
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     abstract public function getParamDTOName();
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     abstract public function getResponseDTOName();
 }

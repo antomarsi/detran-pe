@@ -2,8 +2,8 @@
 
 namespace Bludata\Tests\DetranPE\Clients;
 
-use TestCase;
 use Bludata\DetranPE\Clients\ServiceClient;
+use TestCase;
 
 class ServiceClientTest extends TestCase
 {
@@ -36,7 +36,7 @@ STUBCLASS;
      */
     public function testdtoMethodExists()
     {
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertTrue(method_exists($stub, 'dto'));
     }
 
@@ -45,7 +45,7 @@ STUBCLASS;
      */
     public function testserviceMethodExists()
     {
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertTrue(method_exists($stub, 'service'));
     }
 
@@ -54,8 +54,8 @@ STUBCLASS;
      */
     public function testCallingValidDTOWithInvalidDTOReturnFalse()
     {
-        $stub = new StubDSS;
-        $this->assertFalse($stub->validDTO(new \stdClass));
+        $stub = new StubDSS();
+        $this->assertFalse($stub->validDTO(new \stdClass()));
     }
 
     /**
@@ -64,29 +64,31 @@ STUBCLASS;
     public function testCallingValidDTOWithValidDTOReturnTrue()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\DTOInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertTrue($stub->validDTO($mock));
     }
 
     /**
      * @covers Bludata\DetranPE\Clients\ServiceClient::validDTOOrDie
+     *
      * @uses Bludata\DetranPE\Clients\ServiceClient::validDTO
      * @expectedException Bludata\DetranPE\Exceptions\InvalidDTOException
      */
     public function testValidDTOOrDie()
     {
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $stub->validDTOOrDie(null);
     }
 
     /**
      * @covers Bludata\DetranPE\Clients\ServiceClient::validDTOOrDie
+     *
      * @uses Bludata\DetranPE\Clients\ServiceClient::validDTO
      */
     public function testValidDTOOrDieReturnItSelfIfDTOIsValid()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\DTOInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertSame($stub, $stub->validDTOOrDie($mock));
     }
 
@@ -95,8 +97,8 @@ STUBCLASS;
      */
     public function testCallingValidServiceWithInvalidServiceReturnFalse()
     {
-        $stub = new StubDSS;
-        $this->assertFalse($stub->validService(new \stdClass));
+        $stub = new StubDSS();
+        $this->assertFalse($stub->validService(new \stdClass()));
     }
 
     /**
@@ -105,29 +107,31 @@ STUBCLASS;
     public function testCallingValidServiceWithValidServiceReturnTrue()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\ServiceInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertTrue($stub->validService($mock));
     }
 
     /**
      * @covers Bludata\DetranPE\Clients\ServiceClient::validServiceOrDie
+     *
      * @uses Bludata\DetranPE\Clients\ServiceClient::validService
      * @expectedException Bludata\DetranPE\Exceptions\InvalidServiceException
      */
     public function testValidServiceOrDie()
     {
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $stub->validServiceOrDie(null);
     }
 
     /**
      * @covers Bludata\DetranPE\Clients\ServiceClient::validServiceOrDie
+     *
      * @uses Bludata\DetranPE\Clients\ServiceClient::validService
      */
     public function testValidServiceOrDieReturnItSelfIfDTOIsValid()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\ServiceInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertSame($stub, $stub->validServiceOrDie($mock));
     }
 
@@ -137,7 +141,7 @@ STUBCLASS;
     public function testdtoIsCallableAndReturnItSelf()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\DTOInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertSame($stub, $stub->dto($mock));
     }
 
@@ -147,7 +151,7 @@ STUBCLASS;
     public function testserviceIsCallableAndReturnItSelf()
     {
         $mock = $this->createMock('Bludata\DetranPE\Interfaces\ServiceInterface');
-        $stub = new StubDSS;
+        $stub = new StubDSS();
         $this->assertSame($stub, $stub->service($mock));
     }
 }

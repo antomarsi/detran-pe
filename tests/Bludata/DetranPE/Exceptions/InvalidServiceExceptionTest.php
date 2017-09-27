@@ -2,8 +2,8 @@
 
 namespace Bludata\Tests\DetranPE\Exceptions;
 
-use TestCase;
 use Bludata\DetranPE\Exceptions\InvalidServiceException;
+use TestCase;
 
 class InvalidServiceExceptionTest extends TestCase
 {
