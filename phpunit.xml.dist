@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/5.7/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true"
+         colors="true"
+         forceCoversAnnotation="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="60"
+         processIsolation="false"
+         syntaxCheck="true">
+    <logging>
+        <log type="coverage-html" target="./build/coverage" lowUpperBound="35" highLowerBound="85"/>
+    </logging>
+    <testsuites>
+        <testsuite>
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="true">
+          <directory suffix=".php">./src/Bludata/DetranTO</directory>
+      </whitelist>
+    </filter>
+    <groups>
+        <exclude>
+            <group>integration</group>
+        </exclude>
+    </groups>
+</phpunit>

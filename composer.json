@@ -1,0 +1,37 @@
+{
+    "name": "bludata/detran-to",
+    "description": "API de integração com o DETRAN do estado de Tocantins",
+    "keywords": ["bludata", "detran", "pe", "pernambuco"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.6.0",
+        "ext-soap": "*",
+        "bludata/base": "v2.7.*",
+        "illuminate/support": ">=v5.1.0",
+        "psr/log": "^1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bludata\\DetranPE\\": "src/Bludata/DetranPE/"
+        },
+        "files": [
+            "./src/Bludata/DetranPE/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bludata\\Tests\\DetranPE\\": "tests/Bludata/DetranPE"
+        },
+        "files": [
+            "./tests/TestCase.php"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

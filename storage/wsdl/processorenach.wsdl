@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wsto.detran.to.gov.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://wsto.detran.to.gov.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wsto.detran.to.gov.br/">
+      <s:element name="ConsProcessoCandidatoCondutor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsProcessoCandidatoCondutorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsProcessoCandidatoCondutorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaPsicologico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaPsicologicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaPsicologicoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaClinico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaClinicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaClinicoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoTeorico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoTeoricoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaCursoTeoricoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoSimuladorPratico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoSimuladorPraticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaCursoSimuladorPraticoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaProvaTeorica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaProvaTeoricaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaProvaTeoricaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoPratico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsEtapaCursoPraticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsEtapaCursoPraticoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsAgendamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsAgendamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsAgendamentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsCondutorReciclagem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsCondutorReciclagemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsCondutorReciclagemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaOnline">
+        <s:complexType />
+      </s:element>
+      <s:element name="VerificaOnlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificaOnlineResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsCredenciamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlEntrada">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsCredenciamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsCredenciamentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsProcessoCandidatoCondutorSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsProcessoCandidatoCondutor" />
+  </wsdl:message>
+  <wsdl:message name="ConsProcessoCandidatoCondutorSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsProcessoCandidatoCondutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaPsicologicoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaPsicologico" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaPsicologicoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaPsicologicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaClinicoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaClinico" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaClinicoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaClinicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoTeoricoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoTeorico" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoTeoricoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoTeoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoSimuladorPraticoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoSimuladorPratico" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoSimuladorPraticoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoSimuladorPraticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaProvaTeoricaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaProvaTeorica" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaProvaTeoricaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaProvaTeoricaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoPraticoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoPratico" />
+  </wsdl:message>
+  <wsdl:message name="InsEtapaCursoPraticoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsEtapaCursoPraticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsAgendamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="ConsAgendamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsCondutorReciclagemSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsCondutorReciclagem" />
+  </wsdl:message>
+  <wsdl:message name="ConsCondutorReciclagemSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsCondutorReciclagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaOnlineSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaOnline" />
+  </wsdl:message>
+  <wsdl:message name="VerificaOnlineSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsCredenciamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsCredenciamento" />
+  </wsdl:message>
+  <wsdl:message name="ConsCredenciamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsCredenciamentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProcessoRenachSoap">
+    <wsdl:operation name="ConsProcessoCandidatoCondutor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Online do Processo Renach</wsdl:documentation>
+      <wsdl:input message="tns:ConsProcessoCandidatoCondutorSoapIn" />
+      <wsdl:output message="tns:ConsProcessoCandidatoCondutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaPsicologico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados do Exame Psicologico</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaPsicologicoSoapIn" />
+      <wsdl:output message="tns:InsEtapaPsicologicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaClinico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados do Exame Medico</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaClinicoSoapIn" />
+      <wsdl:output message="tns:InsEtapaClinicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoTeorico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados do Curso Teórico</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaCursoTeoricoSoapIn" />
+      <wsdl:output message="tns:InsEtapaCursoTeoricoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoSimuladorPratico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados do Curso Simulador Prático</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaCursoSimuladorPraticoSoapIn" />
+      <wsdl:output message="tns:InsEtapaCursoSimuladorPraticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaProvaTeorica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados da Prova Teórica</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaProvaTeoricaSoapIn" />
+      <wsdl:output message="tns:InsEtapaProvaTeoricaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoPratico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recepção de Dados do Curso Prático</wsdl:documentation>
+      <wsdl:input message="tns:InsEtapaCursoPraticoSoapIn" />
+      <wsdl:output message="tns:InsEtapaCursoPraticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsAgendamento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Online da Etapa Candidato/Condutor</wsdl:documentation>
+      <wsdl:input message="tns:ConsAgendamentoSoapIn" />
+      <wsdl:output message="tns:ConsAgendamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsCondutorReciclagem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Online dados de Condutores Reciclagem</wsdl:documentation>
+      <wsdl:input message="tns:ConsCondutorReciclagemSoapIn" />
+      <wsdl:output message="tns:ConsCondutorReciclagemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaOnline">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verificacao do Webservice Online</wsdl:documentation>
+      <wsdl:input message="tns:VerificaOnlineSoapIn" />
+      <wsdl:output message="tns:VerificaOnlineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsCredenciamento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Online dos Dados dos Credenciados</wsdl:documentation>
+      <wsdl:input message="tns:ConsCredenciamentoSoapIn" />
+      <wsdl:output message="tns:ConsCredenciamentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessoRenachSoap" type="tns:ProcessoRenachSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsProcessoCandidatoCondutor">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/ConsProcessoCandidatoCondutor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaPsicologico">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaPsicologico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaClinico">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaClinico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoTeorico">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoTeorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoSimuladorPratico">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoSimuladorPratico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaProvaTeorica">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaProvaTeorica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoPratico">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoPratico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsAgendamento">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/ConsAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsCondutorReciclagem">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/ConsCondutorReciclagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaOnline">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/VerificaOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsCredenciamento">
+      <soap:operation soapAction="http://wsto.detran.to.gov.br/ConsCredenciamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProcessoRenachSoap12" type="tns:ProcessoRenachSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsProcessoCandidatoCondutor">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/ConsProcessoCandidatoCondutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaPsicologico">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaPsicologico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaClinico">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaClinico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoTeorico">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoTeorico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoSimuladorPratico">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoSimuladorPratico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaProvaTeorica">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaProvaTeorica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsEtapaCursoPratico">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/InsEtapaCursoPratico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsAgendamento">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/ConsAgendamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsCondutorReciclagem">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/ConsCondutorReciclagem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaOnline">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/VerificaOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsCredenciamento">
+      <soap12:operation soapAction="http://wsto.detran.to.gov.br/ConsCredenciamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessoRenach">
+    <wsdl:port name="ProcessoRenachSoap" binding="tns:ProcessoRenachSoap">
+      <soap:address location="http://wsto.detran.to.gov.br/wsProcessoRenach/ProcessoRenach.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProcessoRenachSoap12" binding="tns:ProcessoRenachSoap12">
+      <soap12:address location="http://wsto.detran.to.gov.br/wsProcessoRenach/ProcessoRenach.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
