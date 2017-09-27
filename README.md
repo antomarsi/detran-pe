@@ -7,7 +7,7 @@
 <a href="https://styleci.io/repos/102138603">
     <img src="https://styleci.io/repos/102138603/shield?branch=master" alt="StyleCI">
 </a>
-<a href="https://styleci.io/repos/102138603">
+<a href="https://scrutinizer-ci.com/g/Bludata/detran-pe">
     <img src="https://scrutinizer-ci.com/g/Bludata/detran-pe/badges/quality-score.png?b=master" alt="StyleCI">
 </a>
 <a href="https://codecov.io/gh/bludata/detran-pe">
