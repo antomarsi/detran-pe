@@ -1,6 +1,6 @@
 {
-    "name": "bludata/detran-to",
-    "description": "API de integração com o DETRAN do estado de Tocantins",
+    "name": "bludata/detran-pe",
+    "description": "API de integração com o DETRAN do estado de Pernambuco",
     "keywords": ["bludata", "detran", "pe", "pernambuco"],
     "license": "MIT",
     "type": "library",
