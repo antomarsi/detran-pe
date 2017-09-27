@@ -1,15 +1,29 @@
 <p align="center"><img width="140px" src="https://cdn.rawgit.com/Bludata/base/e6da2a03/logo.png"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/bludata/detran-pe"><img src="https://travis-ci.org/Bludata/base.svg?branch=master"></a>
-<a href="https://styleci.io/repos/102138603"><img src="https://styleci.io/repos/102138603/shield?branch=master" alt="StyleCI"></a>
-<a href="https://styleci.io/repos/102138603"><img src="https://scrutinizer-ci.com/g/Bludata/base/badges/quality-score.png?b=master" alt="StyleCI"></a>
-<a href="https://codecov.io/gh/bludata/detran-pe"><img src="https://codecov.io/gh/bludata/detran-pe/branch/master/graph/badge.svg" alt="Codecov" /></a>
+<a href="https://travis-ci.org/bludata/detran-pe">
+    <img src="https://travis-ci.org/Bludata/detran-pe.svg?branch=master">
+</a>
+<a href="https://styleci.io/repos/102138603">
+    <img src="https://styleci.io/repos/102138603/shield?branch=master" alt="StyleCI">
+</a>
+<a href="https://styleci.io/repos/102138603">
+    <img src="https://scrutinizer-ci.com/g/Bludata/detran-pe/badges/quality-score.png?b=master" alt="StyleCI">
+</a>
+<a href="https://codecov.io/gh/bludata/detran-pe">
+    <img src="https://codecov.io/gh/bludata/detran-pe/branch/master/graph/badge.svg" alt="Codecov" />
+</a>
 </p>
 <p align="center">
-<a href="https://packagist.org/packages/bludata/detran-pe"><img src="https://poser.pugx.org/bludata/detran-pe/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/bludata/detran-pe"><img src="https://poser.pugx.org/bludata/detran-pe/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/bludata/detran-pe"><img src="https://poser.pugx.org/bludata/detran-pe/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/bludata/detran-pe">
+    <img src="https://poser.pugx.org/bludata/detran-pe/d/total.svg" alt="Total Downloads">
+</a>
+<a href="https://packagist.org/packages/bludata/detran-pe">
+    <img src="https://poser.pugx.org/bludata/detran-pe/v/stable.svg" alt="Latest Stable Version">
+</a>
+<a href="https://packagist.org/packages/bludata/detran-pe">
+    <img src="https://poser.pugx.org/bludata/detran-pe/license.svg" alt="License">
+</a>
 </p>
 
 ### Prerequisites
