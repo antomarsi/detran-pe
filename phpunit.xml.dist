@@ -19,9 +19,6 @@
          timeoutForLargeTests="60"
          processIsolation="false"
          syntaxCheck="true">
-    <logging>
-        <log type="coverage-html" target="./build/coverage" lowUpperBound="35" highLowerBound="85"/>
-    </logging>
     <testsuites>
         <testsuite>
             <directory>./tests/</directory>
@@ -29,7 +26,7 @@
     </testsuites>
     <filter>
       <whitelist processUncoveredFilesFromWhitelist="true">
-          <directory suffix=".php">./src/Bludata/DetranTO</directory>
+          <directory suffix=".php">./src/Bludata/DetranPE</directory>
       </whitelist>
     </filter>
     <groups>
