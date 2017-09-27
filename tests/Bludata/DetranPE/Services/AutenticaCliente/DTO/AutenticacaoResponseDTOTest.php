@@ -2,8 +2,8 @@
 
 namespace Bludata\Tests\DetranPE\Services\AutenticaCliente\DTO;
 
-use TestCase;
 use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoResponseDTO;
+use TestCase;
 
 class AutenticacaoResponseDTOTest extends TestCase
 {
@@ -11,7 +11,7 @@ class AutenticacaoResponseDTOTest extends TestCase
 
     public function setUp()
     {
-        $this->dto = new AutenticacaoResponseDTO;
+        $this->dto = new AutenticacaoResponseDTO();
     }
 
     public function tearDown()

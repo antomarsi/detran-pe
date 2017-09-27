@@ -2,8 +2,8 @@
 
 namespace Bludata\DetranPE;
 
-class Tabela {
-
+class Tabela
+{
     /**
      * @property string $key
      */
@@ -15,7 +15,7 @@ class Tabela {
     protected $values;
 
     /**
-     * @property boolean $tabelasRead
+     * @property bool $tabelasRead
      */
     private $tabelaWasRead = false;
 
@@ -30,18 +30,20 @@ class Tabela {
             return true;
         }
 
-        $path = detranpe_storage_path('tabelas/' . $this->tabela . '.php');
+        $path = detranpe_storage_path('tabelas/'.$this->tabela.'.php');
         if (file_exists($path)) {
             $this->values = require $path;
             $this->tabelaWasRead = true;
+
             return true;
         }
 
         $error = sprintf('Tabela "%s" não existe', $this->tabela);
+
         throw new \InvalidArgumentException($error);
     }
 
-    public function get($key=null)
+    public function get($key = null)
     {
         $this->read();
         if (is_null($key)) {
@@ -51,13 +53,12 @@ class Tabela {
         if ($this->has($key)) {
             return $this->values[$key];
         }
-
-        return null;
     }
 
     public function has($key)
     {
         $this->read();
+
         return array_key_exists($key, $this->values);
     }
 }

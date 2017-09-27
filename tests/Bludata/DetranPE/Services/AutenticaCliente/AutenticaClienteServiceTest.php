@@ -2,11 +2,8 @@
 
 namespace Bludata\Tests\DetranPE\Services\AutenticaCliente;
 
-use SoapClient;
-use TestCase;
 use Bludata\DetranPE\Services\AutenticaCliente\AutenticaClienteService;
-use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoDTO;
-use Bludata\DetranPE\Clients\SoapServiceClient;
+use TestCase;
 
 class AutenticaClienteServiceTest extends TestCase
 {
@@ -15,7 +12,7 @@ class AutenticaClienteServiceTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->service = new AutenticaClienteService;
+        $this->service = new AutenticaClienteService();
     }
 
     public function tearDown()

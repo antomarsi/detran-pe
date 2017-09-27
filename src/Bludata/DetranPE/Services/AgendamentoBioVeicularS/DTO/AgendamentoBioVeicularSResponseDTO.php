@@ -2,9 +2,9 @@
 
 namespace Bludata\DetranPE\Services\AgendamentoBioVeicularS\DTO;
 
-use Bludata\DetranPE\DTO\DTO;
-use Bludata\Common\Annotations\XML\Field;
 use Bludata\Common\Annotations\XML\Entity;
+use Bludata\Common\Annotations\XML\Field;
+use Bludata\DetranPE\DTO\DTO;
 
 /**
  * @Entity(name="AgendamentoBioVeicularS")
@@ -12,84 +12,84 @@ use Bludata\Common\Annotations\XML\Entity;
 final class AgendamentoBioVeicularSResponseDTO extends DTO
 {
     /**
-     * Número de renach do candidato
+     * Número de renach do candidato.
      *
      * @Field(name="sFormularioRenach")
      */
     protected $renach;
 
     /**
-     * Número do processo do candidato
+     * Número do processo do candidato.
      *
      * @Field(name="nProcess")
      */
     protected $numeroProcesso;
 
     /**
-     * Número de cpf do candidato
+     * Número de cpf do candidato.
      *
      * @Field(name="nCpf")
      */
     protected $cpf;
 
     /**
-     * Nome do candidato
+     * Nome do candidato.
      *
      * @Field(name="sNome")
      */
     protected $nome;
 
     /**
-     * Data do agendamento
+     * Data do agendamento.
      *
      * @Field(name="dDisponibilidade")
      */
     protected $disponibilidade;
 
     /**
-     * Categoria pretendida pelo candidato
+     * Categoria pretendida pelo candidato.
      *
      * @Field(name="sCategoriaCnh")
      */
     protected $categoria;
 
     /**
-     * Status atual do agendamento, "I" = Inserindo, "C" = Cancelando
+     * Status atual do agendamento, "I" = Inserindo, "C" = Cancelando.
      *
      * @Field(name="sStatusAgend")
      */
     protected $status;
 
     /**
-     * Foto do candidato
+     * Foto do candidato.
      *
      * @Field(name="iFoto")
      */
     protected $foto;
 
     /**
-     * Digital do polegar direito
+     * Digital do polegar direito.
      *
      * @Field(name="iDigitalPolDir")
      */
     protected $digitalPolegarDireito;
 
     /**
-     * Digital do polegar esquerdo
+     * Digital do polegar esquerdo.
      *
      * @Field(name="IDigitalPolEsq")
      */
     protected $digitalPolegarEsquerdo;
 
     /**
-     * Digital do indicador direito
+     * Digital do indicador direito.
      *
      * @Field(name="iDigitalIndDir")
      */
     protected $digitalIndicadorDireito;
 
     /**
-     * Digital do indicador esquerdo
+     * Digital do indicador esquerdo.
      *
      * @Field(name="iDigitalIndEsq")
      */

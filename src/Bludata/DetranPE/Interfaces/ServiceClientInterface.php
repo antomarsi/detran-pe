@@ -2,8 +2,6 @@
 
 namespace Bludata\DetranPE\Interfaces;
 
-use Bludata\DetranPE\Interfaces\ServiceSenderInterface;
-
 interface ServiceClientInterface
 {
     /**

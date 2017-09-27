@@ -2,13 +2,14 @@
 
 namespace Bludata\Tests\DetranPE\Clients;
 
-use TestCase;
 use Bludata\DetranPE\Clients\SoapServiceClient;
+use TestCase;
 
 class SoapServiceClientTest extends TestCase
 {
     /**
      * @covers Bludata\DetranPE\Clients\SoapServiceClient::call
+     *
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::validServiceOrDie
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::validService
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::dto
@@ -58,6 +59,7 @@ STUBCLASS;
      * @covers Bludata\DetranPE\Clients\SoapServiceClient::__construct
      * @covers Bludata\DetranPE\Clients\SoapServiceClient::createDTOResponse
      * @covers Bludata\DetranPE\Clients\SoapServiceClient::removeEmptyValues
+     *
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::service
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::validService
      * @uses Bludata\DetranPE\Clients\SoapServiceClient::validServiceOrDie
@@ -68,7 +70,7 @@ STUBCLASS;
     public function testCallWithXMLEntityClassDTO()
     {
         $this->registerXMLEntityStub();
-        $mockDTO = new XMLEntityStub;
+        $mockDTO = new XMLEntityStub();
 
         $mockService = $this->createMock('Bludata\DetranPE\Interfaces\ServiceInterface');
         $mockService->method('getName')
@@ -76,14 +78,14 @@ STUBCLASS;
         $mockService->method('getResponseDTOName')
             ->willReturn('Bludata\DetranPE\DTO\TextDTO');
 
-        $soapClientResponse = new \stdClass;
-        $soapClientResponse->response = new \stdClass;
+        $soapClientResponse = new \stdClass();
+        $soapClientResponse->response = new \stdClass();
         $soapClientResponse->response->any = '<Response>'
-            . '<NewDataSet>'
-                . '<Table>'
-                    . '<Body>Some Server Result</Body>'
-                . '</Table>'
-            . '</NewDataSet>'
+            .'<NewDataSet>'
+                .'<Table>'
+                    .'<Body>Some Server Result</Body>'
+                .'</Table>'
+            .'</NewDataSet>'
             .'</Response>';
         $soapClient = $this->createMock('SoapClient');
         $soapClient->method('__soapCall')
@@ -94,12 +96,12 @@ STUBCLASS;
             ->with(
                 'FooService',
                 ['FooService' => [
-                    'xmlEntrada' =>[
+                    'xmlEntrada' => [
                         'any' => [
-                                0 => '<stub><Field>Lorem Ipsum</Field><Confirmacao></Confirmacao><DescricaoErro></DescricaoErro></stub>'
-                            ]
-                        ]
-                    ]
+                                0 => '<stub><Field>Lorem Ipsum</Field><Confirmacao></Confirmacao><DescricaoErro></DescricaoErro></stub>',
+                            ],
+                        ],
+                    ],
                 ],
                 $this->anything()
             );

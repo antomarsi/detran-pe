@@ -2,21 +2,19 @@
 
 namespace Bludata\DetranPE\Clients;
 
-use SoapClient;
-use Doctrine\Common\Annotations\AnnotationReader;
 use Bludata\Common\Annotations\XML\Entity;
 use Bludata\Common\Annotations\XML\Field;
 use Bludata\Common\Converters\XMLConverter;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
-use Bludata\DetranPE\Exceptions\InvalidServiceException;
 use Bludata\DetranPE\Exceptions\NotXMLEntityException;
 use Bludata\DetranPE\Exceptions\NotXMLFieldException;
-use Bludata\DetranPE\Interfaces\DTOInterface;
-use Bludata\DetranPE\Interfaces\ServiceInterface;
+use Doctrine\Common\Annotations\AnnotationReader;
+use SoapClient;
 
 class SoapServiceClient extends ServiceClient
 {
-    public function __construct(SoapClient $soapClient) {
+    public function __construct(SoapClient $soapClient)
+    {
         $this->soapClient = $soapClient;
     }
 
@@ -46,6 +44,7 @@ class SoapServiceClient extends ServiceClient
         }
 
         $data = $data['Table'];
+
         return $data;
     }
 
@@ -71,6 +70,7 @@ class SoapServiceClient extends ServiceClient
 
         if (empty($xmlEntityAnnotation)) {
             $message = sprintf('Class "%s" is not a valid XML entity', get_class($this->dto));
+
             throw new NotXMLEntityException($message);
         }
 
@@ -86,6 +86,7 @@ class SoapServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
+
                 throw new NotXMLFieldException($message);
             }
             $field = $fieldAnnotation->getName();
@@ -104,6 +105,7 @@ class SoapServiceClient extends ServiceClient
             $setMethod = $instance->setMethod($property->getName());
             $instance->$setMethod($value);
         }
+
         return $instance;
     }
 
@@ -111,6 +113,7 @@ class SoapServiceClient extends ServiceClient
     {
         $xml = simplexml_load_string($xml);
         $array = json_decode(json_encode($xml), true);
+
         return $this->removeEmptyValues($array);
     }
 
@@ -140,11 +143,13 @@ class SoapServiceClient extends ServiceClient
 
     /**
      * @param array $array Array to convert to XML string
+     *
      * @return string
      */
     protected function toXML($element)
     {
-        $converter = new XMLConverter;
+        $converter = new XMLConverter();
+
         return $converter->toString($element);
     }
 
@@ -155,7 +160,7 @@ class SoapServiceClient extends ServiceClient
         $params = $this->toXML($this->dto);
 
         if ($this->logger instanceof LoggerInterface) {
-            $this->logger->debug('Sending XML: ' . $params);
+            $this->logger->debug('Sending XML: '.$params);
         }
 
         $response = $this->soapClient->__soapCall(
@@ -164,12 +169,13 @@ class SoapServiceClient extends ServiceClient
                 $functionName => [
                     'xmlEntrada' => [
                         'any' => [
-                            $params
-                        ]
-                    ]
-                ]
+                            $params,
+                        ],
+                    ],
+                ],
             ]
         );
+
         return $this->createDTOResponse($response);
     }
 }

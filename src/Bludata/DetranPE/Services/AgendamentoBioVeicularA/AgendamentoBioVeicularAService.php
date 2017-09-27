@@ -7,7 +7,7 @@ use Bludata\DetranPE\Services\Service;
 class AgendamentoBioVeicularAService extends Service
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {
@@ -15,7 +15,7 @@ class AgendamentoBioVeicularAService extends Service
     }
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getParamDTOName()
     {
@@ -23,7 +23,7 @@ class AgendamentoBioVeicularAService extends Service
     }
 
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseDTOName()
     {

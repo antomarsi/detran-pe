@@ -2,8 +2,8 @@
 
 namespace Bludata\Tests\DetranPE;
 
-use TestCase;
 use Bludata\DetranPE\Tabela;
+use TestCase;
 
 class TabelaTest extends TestCase
 {
@@ -11,7 +11,7 @@ class TabelaTest extends TestCase
     {
         $tabelas = scandir(detranpe_storage_path('tabelas'));
         $result = [];
-        foreach($tabelas as $tabela) {
+        foreach ($tabelas as $tabela) {
             if (!in_array($tabela, ['.', '..'])) {
                 $result[] = [trim(substr($tabela, 0, (strlen($tabela) - 4)))];
             }
@@ -33,6 +33,7 @@ class TabelaTest extends TestCase
     /**
      * @dataProvider tabelas
      * @covers Bludata\DetranPE\Tabela::get
+     *
      * @uses Bludata\DetranPE\Tabela::has
      * @uses Bludata\DetranPE\Tabela::__construct
      * @uses Bludata\DetranPE\Tabela::read
@@ -48,6 +49,7 @@ class TabelaTest extends TestCase
     /**
      * @dataProvider tabelas
      * @covers Bludata\DetranPE\Tabela::get
+     *
      * @uses Bludata\DetranPE\Tabela::has
      * @uses Bludata\DetranPE\Tabela::__construct
      * @uses Bludata\DetranPE\Tabela::read
@@ -58,7 +60,7 @@ class TabelaTest extends TestCase
     {
         $tabela = new Tabela($nomeTabela);
         $values = $tabela->get();
-        foreach($values as $key => $value) {
+        foreach ($values as $key => $value) {
             $currentValue = $tabela->get($key);
             $this->assertEquals($value, $currentValue);
             $this->assertInternalType('string', $currentValue);
@@ -68,6 +70,7 @@ class TabelaTest extends TestCase
     /**
      * @dataProvider tabelas
      * @covers Bludata\DetranPE\Tabela::has
+     *
      * @uses Bludata\DetranPE\Tabela::get
      * @uses Bludata\DetranPE\Tabela::__construct
      * @uses Bludata\DetranPE\Tabela::read
@@ -78,7 +81,7 @@ class TabelaTest extends TestCase
     {
         $tabela = new Tabela($nomeTabela);
         $keys = array_keys($tabela->get());
-        foreach($keys as $key) {
+        foreach ($keys as $key) {
             $this->assertTrue($tabela->has($key));
         }
         $keyThatDoesntExists = '...';

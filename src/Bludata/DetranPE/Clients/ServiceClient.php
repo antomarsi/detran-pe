@@ -2,12 +2,12 @@
 
 namespace Bludata\DetranPE\Clients;
 
-use Psr\Log\LoggerInterface;
-use Bludata\DetranPE\Exceptions\InvalidServiceException;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
+use Bludata\DetranPE\Exceptions\InvalidServiceException;
+use Bludata\DetranPE\Interfaces\DTOInterface;
 use Bludata\DetranPE\Interfaces\ServiceClientInterface;
 use Bludata\DetranPE\Interfaces\ServiceInterface;
-use Bludata\DetranPE\Interfaces\DTOInterface;
+use Psr\Log\LoggerInterface;
 
 abstract class ServiceClient implements ServiceClientInterface
 {
@@ -32,6 +32,7 @@ abstract class ServiceClient implements ServiceClientInterface
     protected function newDTOInstance($dtoClassName)
     {
         $reflection = new \ReflectionClass($dtoClassName);
+
         return $reflection->newInstanceWithoutConstructor();
     }
 
@@ -41,6 +42,7 @@ abstract class ServiceClient implements ServiceClientInterface
     public function newParamDTOInstance()
     {
         $this->validServiceOrDie();
+
         return $this->newDTOInstance($this->service->getParamDTOName());
     }
 
@@ -50,22 +52,26 @@ abstract class ServiceClient implements ServiceClientInterface
     public function newResponseDTOInstance()
     {
         $this->validServiceOrDie();
+
         return $this->newDTOInstance($this->service->getResponseDTOName());
     }
 
     /**
      * @param Bludata\DetranPE\Interfaces\DTOInterface $dto
+     *
      * @return self
      */
     public function dto(DTOInterface $dto)
     {
         $this->dto = $dto;
+
         return $this;
     }
 
     /**
      * @param mixed
-     * @return boolean
+     *
+     * @return bool
      */
     public function validDTO($dto)
     {
@@ -74,17 +80,20 @@ abstract class ServiceClient implements ServiceClientInterface
 
     /**
      * @param Bludata\DetranPE\Interfaces\ServiceInterface $service
+     *
      * @return self
      */
     public function service(ServiceInterface $service)
     {
         $this->service = $service;
+
         return $this;
     }
 
     /**
      * @param mixed
-     * @return boolean
+     *
+     * @return bool
      */
     public function validService($service)
     {
@@ -93,12 +102,13 @@ abstract class ServiceClient implements ServiceClientInterface
 
     /**
      * @param mixed
+     *
      * @throws Bludata\DetranPE\Exceptions\InvalidServiceException
      */
     public function validServiceOrDie($service)
     {
         if (!$this->validService($service)) {
-            throw new InvalidServiceException;
+            throw new InvalidServiceException();
         }
 
         return $this;
@@ -106,12 +116,13 @@ abstract class ServiceClient implements ServiceClientInterface
 
     /**
      * @param mixed
+     *
      * @throws Bludata\DetranPE\Exceptions\InvalidDTOException
      */
     public function validDTOOrDie($dto)
     {
         if (!$this->validDTO($dto)) {
-            throw new InvalidDTOException;
+            throw new InvalidDTOException();
         }
 
         return $this;
@@ -123,11 +134,12 @@ abstract class ServiceClient implements ServiceClientInterface
     public function logger(LoggerInterface $logger)
     {
         $this->logger = $logger;
+
         return $this;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     abstract public function call();
 }
