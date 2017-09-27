@@ -14,7 +14,8 @@
 
 ### Prerequisites
 
-PHP >= 7.0
+PHP >= 5.6
+ext-soap
 
 ### Installing
 
