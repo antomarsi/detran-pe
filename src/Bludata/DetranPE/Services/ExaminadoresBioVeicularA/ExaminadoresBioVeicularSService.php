@@ -1,10 +1,10 @@
 <?php
 
-namespace Bludata\DetranPE\Services\AgendamentoBioVeicularA;
+namespace Bludata\DetranPE\Services\ExaminadoresBioVeicularA;
 
 use Bludata\DetranPE\Services\Service;
 
-class ExaminadoresBioVeicularSService extends Service
+class ExaminadoresBioVeicularAService extends Service
 {
     /**
      * {@inheritdoc}

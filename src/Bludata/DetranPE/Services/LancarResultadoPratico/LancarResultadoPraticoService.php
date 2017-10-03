@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\DetranPE\Services\AgendamentoBioVeicularS;
+namespace Bludata\DetranPE\Services\LancarResultadoPratico;
 
 use Bludata\DetranPE\Services\Service;
 
