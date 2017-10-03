@@ -7,9 +7,9 @@ use Bludata\Common\Annotations\XML\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
- * @Entity(name="AgendamentoBioVeicularA")
+ * @Entity(name="ExaminadoresBioVeicularA")
  */
-final class ExaminadoresBioVeicularSParamDTO extends DTO
+final class ExaminadoresBioVeicularAParamDTO extends DTO
 {
     /**
      * Código do examinador.

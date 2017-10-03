@@ -1,15 +1,15 @@
 <?php
 
-namespace Bludata\DetranPE\Services\AutenticaCliente\DTO;
+namespace Bludata\DetranPE\Services\AtualizarAgendamentoBioVeicularEmpresa\DTO;
 
 use Bludata\Common\Annotations\XML\Entity;
 use Bludata\Common\Annotations\XML\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
- * @Entity(name="AgendamentoBioVeicularS")
+ * @Entity(name="AtualizarAgendamentoBioVeicularEmpresa")
  */
-final class AgendamentoBioVeicularAParamDTO extends DTO
+final class AtualizarAgendamentoBioVeicularEmpresaParamDTO extends DTO
 {
     /**
      * Número do processo do candidato.
