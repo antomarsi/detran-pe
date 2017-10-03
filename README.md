@@ -28,8 +28,8 @@
 
 ### Prerequisites
 
-PHP >= 5.6
-ext-soap
+* PHP >= 5.6
+* ext-soap
 
 ### Installing
 
