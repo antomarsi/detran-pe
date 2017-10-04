@@ -95,7 +95,6 @@ class RestServiceClient extends ServiceClient
         $functionName = $this->functionName();
 
         $params = $this->dto->toArray();
-        dd($this->dto);
         $params = implode('/', $params);
 
         if ($this->logger instanceof LoggerInterface) {
