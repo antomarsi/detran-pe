@@ -2,8 +2,8 @@
 
 namespace Bludata\DetranPE\Services\AtualizarAgendamentoBioVeicularEmpresa\DTO;
 
-use Bludata\Common\Annotations\XML\Entity;
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Annotations\JSON\Entity;
+use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
@@ -14,21 +14,21 @@ final class AtualizarAgendamentoBioVeicularEmpresaParamDTO extends DTO
     /**
      * Número do processo do candidato.
      *
-     * @Field(name="nProcess")
+     * @Field(name="nProcess", order="0", type="float")
      */
     protected $numeroProcesso;
 
     /**
      * Categoria pretendida pelo candidato.
      *
-     * @Field(name="sCategoriaCnh")
+     * @Field(name="sCategoriaCnh", order="1", type="string")
      */
     protected $categoria;
 
     /**
      * Data do agendamento.
      *
-     * @Field(name="dDisponibilidade")
+     * @Field(name="dDisponibilidade", order="2", type="datetime")
      */
     protected $disponibilidade;
 }

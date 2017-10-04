@@ -2,8 +2,8 @@
 
 namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicularEmpresa\DTO;
 
-use Bludata\Common\Annotations\XML\Entity;
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Annotations\JSON\Entity;
+use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
@@ -14,84 +14,84 @@ final class ConsultarAgendamentoBioVeicularEmpresaResponseDTO extends DTO
     /**
      * Número de renach do candidato.
      *
-     * @Field(name="sFormularioRenach")
+     * @Field(name="sFormularioRenach", order="0", type="string")
      */
     protected $renach;
 
     /**
      * Número do processo do candidato.
      *
-     * @Field(name="nProcess")
+     * @Field(name="nProcess", order="1", type="integer")
      */
     protected $numeroProcesso;
 
     /**
      * Número de cpf do candidato.
      *
-     * @Field(name="nCpf")
+     * @Field(name="nCpf", order="2", type="integer")
      */
     protected $cpf;
 
     /**
      * Nome do candidato.
      *
-     * @Field(name="sNome")
+     * @Field(name="sNome", order="3", type="string")
      */
     protected $nome;
 
     /**
      * Data do agendamento.
      *
-     * @Field(name="dDisponibilidade")
+     * @Field(name="dDisponibilidade", order="4", type="datetime")
      */
     protected $disponibilidade;
 
     /**
      * Categoria pretendida pelo candidato.
      *
-     * @Field(name="sCategoriaCnh")
+     * @Field(name="sCategoriaCnh", order="5", type="string")
      */
     protected $categoria;
 
     /**
      * Status atual do agendamento, "I" = Inserindo, "C" = Cancelando.
      *
-     * @Field(name="sStatusAgend")
+     * @Field(name="sStatusAgend", order="6", type="string")
      */
     protected $status;
 
     /**
      * Foto do candidato.
      *
-     * @Field(name="iFoto")
+     * @Field(name="iFoto", order="7", type="string")
      */
     protected $foto;
 
     /**
      * Digital do polegar direito.
      *
-     * @Field(name="iDigitalPolDir")
+     * @Field(name="iDigitalPolDir", order="8", type="string")
      */
     protected $digitalPolegarDireito;
 
     /**
      * Digital do polegar esquerdo.
      *
-     * @Field(name="IDigitalPolEsq")
+     * @Field(name="IDigitalPolEsq", order="9", type="string")
      */
     protected $digitalPolegarEsquerdo;
 
     /**
      * Digital do indicador direito.
      *
-     * @Field(name="iDigitalIndDir")
+     * @Field(name="iDigitalIndDir", order="10", type="string")
      */
     protected $digitalIndicadorDireito;
 
     /**
      * Digital do indicador esquerdo.
      *
-     * @Field(name="iDigitalIndEsq")
+     * @Field(name="iDigitalIndEsq", order="11", type="string")
      */
     protected $digitalIndicadorEsquerdo;
 }

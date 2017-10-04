@@ -1,17 +1,17 @@
 <?php
 
-namespace Bludata\DetranPE\Services\ExaminadoresBioVeicularA;
+namespace Bludata\DetranPE\Services\AtualizarExaminadoresBioVeicular;
 
 use Bludata\DetranPE\Services\Service;
 
-class ExaminadoresBioVeicularAService extends Service
+class AtualizarExaminadoresBioVeicularService extends Service
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'ExaminadoresBioVeicularA';
+        return 'AtualizarExaminadoresBioVeicular';
     }
 
     /**
@@ -19,7 +19,7 @@ class ExaminadoresBioVeicularAService extends Service
      */
     public function getParamDTOName()
     {
-        return 'Bludata\DetranPE\Services\ExaminadoresBioVeicularA\DTO\ExaminadoresBioVeicularAParamDTO';
+        return 'Bludata\DetranPE\Services\AtualizarExaminadoresBioVeicular\DTO\AtualizarExaminadoresBioVeicularParamDTO';
     }
 
     /**
