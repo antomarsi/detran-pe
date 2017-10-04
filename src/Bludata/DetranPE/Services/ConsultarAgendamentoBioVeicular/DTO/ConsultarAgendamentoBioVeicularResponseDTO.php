@@ -1,15 +1,15 @@
 <?php
 
-namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicularEmpresa\DTO;
+namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular\DTO;
 
 use Bludata\Common\Annotations\JSON\Entity;
 use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
- * @Entity(name="ConsultarAgendamentoBioVeicularEmpresa")
+ * @Entity(name="ConsultarAgendamentoBioVeicular")
  */
-final class ConsultarAgendamentoBioVeicularEmpresaResponseDTO extends DTO
+final class ConsultarAgendamentoBioVeicularResponseDTO extends DTO
 {
     /**
      * Número de renach do candidato.

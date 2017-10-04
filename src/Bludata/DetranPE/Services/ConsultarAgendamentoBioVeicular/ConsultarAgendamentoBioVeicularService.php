@@ -1,17 +1,17 @@
 <?php
 
-namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicularEmpresa;
+namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular;
 
 use Bludata\DetranPE\Services\Service;
 
-class ConsultarAgendamentoBioVeicularEmpresaService extends Service
+class ConsultarAgendamentoBioVeicularService extends Service
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'ConsultarAgendamentoBioVeicularEmpresa';
+        return 'ConsultarAgendamentoBioVeicular';
     }
 
     /**
@@ -19,7 +19,7 @@ class ConsultarAgendamentoBioVeicularEmpresaService extends Service
      */
     public function getParamDTOName()
     {
-        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularEmpresaParamDTO';
+        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularParamDTO';
     }
 
     /**
@@ -27,6 +27,6 @@ class ConsultarAgendamentoBioVeicularEmpresaService extends Service
      */
     public function getResponseDTOName()
     {
-        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularEmpresaResponseDTO';
+        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularResponseDTO';
     }
 }
