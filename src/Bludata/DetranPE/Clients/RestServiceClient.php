@@ -10,6 +10,8 @@ use Bludata\DetranPE\Exceptions\NotXMLEntityException;
 use Bludata\DetranPE\Exceptions\NotXMLFieldException;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7;
 
 class RestServiceClient extends ServiceClient
 {
@@ -102,7 +104,14 @@ class RestServiceClient extends ServiceClient
         }
 
         $url = $this->baseUrl.'/'.$functionName.'/'.$params;
-        $response = $this->client->request($method, $url, $headers);
+        try {
+            $response = $this->client->request($method, $url, $headers);
+        } catch (RequestException $e) {
+            if ($e->hasResponse()) {
+                abort($e->getResponse()->getStatusCode(), Psr7\str($e->getResponse()));
+            }
+            abort(500, Psr7\str($e->getRequest()));
+        }
 
         return $this->createDTOResponse($response);
     }
