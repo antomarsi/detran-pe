@@ -1,17 +1,17 @@
 <?php
 
-namespace Bludata\Tests\DetranPE\Services\AutenticaCliente\DTO;
+namespace Bludata\Tests\DetranPE\Services\AtualizarAgendamentoBioVeicular\DTO;
 
-use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoDTO;
+use Bludata\DetranPE\Services\AtualizarAgendamentoBioVeicular\DTO\AgendamentoBioVeicularSParamDTO;
 use TestCase;
 
-class AutenticacaoDTOTest extends TestCase
+class AgendamentoBioVeicularAParamDTO extends TestCase
 {
     protected $dto;
 
     public function setUp()
     {
-        $this->dto = new AutenticacaoDTO();
+        $this->dto = new AgendamentoBioVeicularSParamDTO();
     }
 
     public function tearDown()
@@ -22,8 +22,9 @@ class AutenticacaoDTOTest extends TestCase
     public function attributes()
     {
         return [
-            ['codigoCliente'],
-            ['codigoServico'],
+            ['numeroProcesso'],
+            ['categoria'],
+            ['disponibilidade'],
         ];
     }
 

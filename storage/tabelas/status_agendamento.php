@@ -5,7 +5,6 @@
  */
 
 return [
-    '1' => 'APTO',
-    '2' => 'INAPTO TEMPORÁRIO',
-    '3' => 'INAPTO'
+    'I' => 'INSERINDO NOVO AGENDAMENTO',
+    'C' => 'CANCELANDO AGENDAMENTO',
 ];

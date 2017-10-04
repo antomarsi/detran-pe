@@ -30,5 +30,5 @@ final class ConsultarAgendamentoBioVeicularEmpresaParamDTO extends DTO
      *
      * @Field(name="nEmpresa", order="2", type="integer")
      */
-    protected $empresa;
+    protected $empresa = 2;
 }
