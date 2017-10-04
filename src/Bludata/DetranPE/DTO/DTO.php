@@ -2,7 +2,7 @@
 
 namespace Bludata\DetranPE\DTO;
 
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Annotations\JSON\Field;
 use Bludata\Common\Traits\AttributesTrait;
 use Bludata\DetranPE\Exceptions\MethodNotExistsException;
 use Bludata\DetranPE\Interfaces\DTOInterface;
