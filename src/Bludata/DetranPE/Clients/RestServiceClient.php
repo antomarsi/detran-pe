@@ -26,33 +26,83 @@ class RestServiceClient extends ServiceClient
         $this->baseUrl = $baseUrl;
     }
 
+    public function getBaseUrl($baseUrl)
+    {
+        return $this->baseUrl();
+    }
+
     public function functionName()
     {
         return $this->service->getName();
     }
 
-    public function call()
+    protected function createDTOResponse($data)
+    {
+        if (!$data) {
+            return;
+        }
+        $data = json_decode($data, true);
+        $responseDTOClassName = $this->service->getResponseDTOName();
+        if (!$responseDTOClassName) {
+            throw new InvalidDTOException('Response DTO was not set');
+        }
+        $class = new \ReflectionClass($responseDTOClassName);
+        $reader = new AnnotationReader();
+        $xmlEntityAnnotation = $reader->getClassAnnotation(
+            $class,
+            'Bludata\Common\Annotations\JSON\Entity'
+        );
+        if (empty($xmlEntityAnnotation)) {
+            $message = sprintf('Class "%s" is not a valid JSON entity', get_class($this->dto));
+            throw new NotXMLEntityException($message);
+        }
+        $instance = $class->newInstance();
+        foreach ($class->getProperties() as $property) {
+            $fieldAnnotation = $reader->getPropertyAnnotation(
+                $property,
+                'Bludata\Common\Annotations\JSON\Field'
+            );
+            if (!$fieldAnnotation) {
+                $message = sprintf(
+                    'Field "%s" is not a valid JSON field from class "%s"',
+                    $property->getName(),
+                    $responseDTOClassName
+                );
+                throw new NotXMLFieldException($message);
+            }
+            $field = $fieldAnnotation->getName();
+            $value = null;
+            if (is_object($data)) {
+                if (property_exists($data, $field)) {
+                    $value = $data->$field;
+                }
+            }
+            if (is_array($data)) {
+                if (array_key_exists($field, $data)) {
+                    $value = $data[$field];
+                }
+            }
+            $setMethod = $instance->setMethod($property->getName());
+            $instance->$setMethod($value);
+        }
+        return $instance;
+    }
+
+    public function call($method = 'GET', $headers = [])
     {
         $this->validServiceOrDie($this->service);
+
         $functionName = $this->functionName();
-        $params = $this->toXML($this->dto);
+
+        $params = $this->dto->toArray();
+        $params = implode('/', $params);
 
         if ($this->logger instanceof LoggerInterface) {
             $this->logger->debug('Sending Data: '.$params);
         }
 
-        $response = $this->soapClient->__soapCall(
-            $functionName,
-            [
-                $functionName => [
-                    'xmlEntrada' => [
-                        'any' => [
-                            $params,
-                        ],
-                    ],
-                ],
-            ]
-        );
+        $url = $this->baseUrl.'/'.$functionName.'/'.$params;
+        $response = $this->client->request($method, $url, $headers);
 
         return $this->createDTOResponse($response);
     }
