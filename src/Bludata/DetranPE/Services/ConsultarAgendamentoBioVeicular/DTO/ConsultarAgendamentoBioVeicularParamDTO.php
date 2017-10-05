@@ -14,21 +14,21 @@ final class ConsultarAgendamentoBioVeicularParamDTO extends DTO
     /**
      * Ponto de atendimento.
      *
-     * @Field(name="nPontoAtendimento", order="0", type="integer")
+     * @Field(name="nPontoAtendimento", order=0, type="integer")
      */
     protected $pontoAtendimento;
 
     /**
      * Número de renach do candidato.
      *
-     * @Field(name="sFormularioRenach", order="1", type="string")
+     * @Field(name="sFormularioRenach", order=1, type="string")
      */
     protected $renach;
 
     /**
      * Código da empresa.
      *
-     * @Field(name="nEmpresa", order="2", type="integer")
+     * @Field(name="nEmpresa", order=2, type="integer")
      */
     protected $empresa = 2;
 }

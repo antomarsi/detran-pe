@@ -42,10 +42,13 @@ class RestServiceClient extends ServiceClient
         if (!$data) {
             return;
         }
+        $data = json_decode($data);
         $responseDTOClassName = $this->service->getResponseDTOName();
+
         if (!$responseDTOClassName) {
             throw new InvalidDTOException('Response DTO was not set');
         }
+
         $class = new \ReflectionClass($responseDTOClassName);
         $reader = new AnnotationReader();
         $jsonEntityAnnotation = $reader->getClassAnnotation(
@@ -110,7 +113,6 @@ class RestServiceClient extends ServiceClient
             }
             abort(500, Psr7\str($e->getRequest()));
         }
-
-        return $this->createDTOResponse($response);
+        return $this->createDTOResponse($response->getBody()->getContents());
     }
 }

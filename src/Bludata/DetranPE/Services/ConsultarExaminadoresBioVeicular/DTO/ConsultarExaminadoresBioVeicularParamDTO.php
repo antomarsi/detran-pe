@@ -14,7 +14,7 @@ final class ConsultarExaminadoresBioVeicularParamDTO extends DTO
     /**
      * Número de cpf do candidato.
      *
-     * @Field(name="nCpf", order="0", type="integer")
+     * @Field(name="nCpf", order=0, type="integer")
      */
     protected $cpf;
 }
