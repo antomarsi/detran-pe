@@ -43,10 +43,11 @@ class RestServiceClient extends ServiceClient
         if (!$data) {
             return;
         }
-        $data = json_decode($data);
+        $data = json_decode($data, true);
         if (empty($data)) {
             throw new EmptyResponseDTOException('Response is empty');
         }
+        $data = $data[0];
         $responseDTOClassName = $this->service->getResponseDTOName();
 
         if (!$responseDTOClassName) {
@@ -76,7 +77,6 @@ class RestServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
-
                 throw new NotJSONFieldException($message);
             }
             $field = $fieldAnnotation->getName();
@@ -94,7 +94,6 @@ class RestServiceClient extends ServiceClient
             $setMethod = $instance->setMethod($property->getName());
             $instance->$setMethod($value);
         }
-
         return $instance;
     }
 
@@ -104,15 +103,11 @@ class RestServiceClient extends ServiceClient
 
         $functionName = $this->functionName();
 
-        $params = $this->dto->toArray();
-        $params = implode('/', $params);
-
         if ($this->logger instanceof LoggerInterface) {
             $this->logger->debug('Sending Data: '.$params);
         }
 
-        $url = $this->baseUrl.'/'.$this->dto->getUrl();
-
+        $url = $this->baseUrl.'/'.$this->getUrl();
         try {
             $response = $this->client->request($method, $url, $headers);
         } catch (RequestException $e) {
@@ -123,5 +118,44 @@ class RestServiceClient extends ServiceClient
         }
 
         return $this->createDTOResponse($response->getBody()->getContents());
+    }
+
+    public function getUrl()
+    {
+        $paramDTOClassName = $this->service->getParamDTOName();
+        if (!$paramDTOClassName) {
+            throw new InvalidDTOException('Param DTO was not set');
+        }
+        $class = new \ReflectionClass($paramDTOClassName);
+        $reader = new AnnotationReader();
+        $jsonEntityAnnotation = $reader->getClassAnnotation(
+            $class,
+            'Bludata\Common\Annotations\JSON\Entity'
+        );
+        if (empty($jsonEntityAnnotation)) {
+            $message = sprintf('Class "%s" is not a valid JSON entity', get_class($this->dto));
+
+            throw new NotJSONEntityException($message);
+        }
+        $array = [];
+        foreach ($class->getProperties() as $property) {
+            $fieldAnnotation = $reader->getPropertyAnnotation(
+                $property,
+                'Bludata\Common\Annotations\JSON\Field'
+            );
+            if (!$fieldAnnotation) {
+                $message = sprintf(
+                    'Field "%s" is not a valid JSON field from class "%s"',
+                    $property->getName(),
+                    $paramDTOClassName
+                );
+
+                throw new NotJSONFieldException($message);
+            }
+            $field = $property->getName();
+            $array[$fieldAnnotation->getOrder()] = $this->dto->$field;
+        }
+
+        return $this->service->getName().'/'.implode('/', $array);
     }
 }
