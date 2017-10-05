@@ -47,7 +47,9 @@ class RestServiceClient extends ServiceClient
         if (empty($data)) {
             throw new EmptyResponseDTOException('Response is empty');
         }
-        $data = $data[0];
+        if (isset($data[0])) {
+            $data = $data[0];
+        }
         $responseDTOClassName = $this->service->getResponseDTOName();
 
         if (!$responseDTOClassName) {
