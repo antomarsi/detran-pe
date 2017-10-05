@@ -5,11 +5,11 @@ namespace Bludata\DetranPE\DTO;
 use Bludata\Common\Annotations\JSON\Entity;
 use Bludata\Common\Annotations\JSON\Field;
 use Bludata\Common\Traits\AttributesTrait;
-use Bludata\DetranPE\Exceptions\MethodNotExistsException;
-use Bludata\DetranPE\Interfaces\DTOInterface;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
+use Bludata\DetranPE\Exceptions\MethodNotExistsException;
 use Bludata\DetranPE\Exceptions\NotJSONEntityException;
 use Bludata\DetranPE\Exceptions\NotJSONFieldException;
+use Bludata\DetranPE\Interfaces\DTOInterface;
 use Doctrine\Common\Annotations\AnnotationReader;
 
 abstract class DTO implements DTOInterface
@@ -51,6 +51,7 @@ abstract class DTO implements DTOInterface
         );
         if (empty($jsonEntityAnnotation)) {
             $message = sprintf('Class "%s" is not a valid JSON entity', get_class($this->dto));
+
             throw new NotJSONEntityException($message);
         }
         $array = [];
@@ -65,11 +66,13 @@ abstract class DTO implements DTOInterface
                     $property->getName(),
                     $paramDTOClassName
                 );
+
                 throw new NotJSONFieldException($message);
             }
             $field = $fieldAnnotation->getName();
             $array[$fieldAnnotation->getOrder()] = $this->$field;
         }
+
         return $this->getName().'/'.implode('/', $array);
     }
 }

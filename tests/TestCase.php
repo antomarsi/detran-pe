@@ -29,6 +29,7 @@ class TestCase extends ParentTestCase
     protected function getRestClient()
     {
         $options = $this->getSoapServiceClientOptions();
+
         return new RestServiceClient($this->getBaseUrl());
     }
 

@@ -4,10 +4,10 @@ namespace Bludata\DetranPE\Clients;
 
 use Bludata\Common\Annotations\JSON\Entity;
 use Bludata\Common\Annotations\JSON\Field;
+use Bludata\DetranPE\Exceptions\EmptyResponseDTOException;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
 use Bludata\DetranPE\Exceptions\NotJSONEntityException;
 use Bludata\DetranPE\Exceptions\NotJSONFieldException;
-use Bludata\DetranPE\Exceptions\EmptyResponseDTOException;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -61,6 +61,7 @@ class RestServiceClient extends ServiceClient
         );
         if (empty($jsonEntityAnnotation)) {
             $message = sprintf('Class "%s" is not a valid JSON entity', get_class($this->dto));
+
             throw new NotJSONEntityException($message);
         }
         $instance = $class->newInstance();
@@ -75,6 +76,7 @@ class RestServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
+
                 throw new NotJSONFieldException($message);
             }
             $field = $fieldAnnotation->getName();
@@ -92,6 +94,7 @@ class RestServiceClient extends ServiceClient
             $setMethod = $instance->setMethod($property->getName());
             $instance->$setMethod($value);
         }
+
         return $instance;
     }
 
@@ -108,7 +111,8 @@ class RestServiceClient extends ServiceClient
             $this->logger->debug('Sending Data: '.$params);
         }
 
-        $url = $this->baseUrl.'/'.$functionName.'/'.$params;
+        $url = $this->baseUrl.'/'.$this->dto->getUrl();
+
         try {
             $response = $this->client->request($method, $url, $headers);
         } catch (RequestException $e) {
@@ -117,6 +121,7 @@ class RestServiceClient extends ServiceClient
             }
             abort(500, Psr7\str($e->getRequest()));
         }
+
         return $this->createDTOResponse($response->getBody()->getContents());
     }
 }
