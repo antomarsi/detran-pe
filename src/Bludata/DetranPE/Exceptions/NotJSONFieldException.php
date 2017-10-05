@@ -4,6 +4,6 @@ namespace Bludata\DetranPE\Exceptions;
 
 use InvalidArgumentException;
 
-class NotXMLEntityException extends InvalidArgumentException
+class NotJSONFieldException extends InvalidArgumentException
 {
 }

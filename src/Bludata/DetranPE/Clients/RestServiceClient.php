@@ -2,12 +2,11 @@
 
 namespace Bludata\DetranPE\Clients;
 
-use Bludata\Common\Annotations\XML\Entity;
-use Bludata\Common\Annotations\XML\Field;
-use Bludata\Common\Converters\XMLConverter;
+use Bludata\Common\Annotations\JSON\Entity;
+use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
-use Bludata\DetranPE\Exceptions\NotXMLEntityException;
-use Bludata\DetranPE\Exceptions\NotXMLFieldException;
+use Bludata\DetranPE\Exceptions\NotJSONEntityException;
+use Bludata\DetranPE\Exceptions\NotJSONFieldException;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -43,20 +42,19 @@ class RestServiceClient extends ServiceClient
         if (!$data) {
             return;
         }
-        $data = json_decode($data, true);
         $responseDTOClassName = $this->service->getResponseDTOName();
         if (!$responseDTOClassName) {
             throw new InvalidDTOException('Response DTO was not set');
         }
         $class = new \ReflectionClass($responseDTOClassName);
         $reader = new AnnotationReader();
-        $xmlEntityAnnotation = $reader->getClassAnnotation(
+        $jsonEntityAnnotation = $reader->getClassAnnotation(
             $class,
             'Bludata\Common\Annotations\JSON\Entity'
         );
-        if (empty($xmlEntityAnnotation)) {
+        if (empty($jsonEntityAnnotation)) {
             $message = sprintf('Class "%s" is not a valid JSON entity', get_class($this->dto));
-            throw new NotXMLEntityException($message);
+            throw new NotJSONEntityException($message);
         }
         $instance = $class->newInstance();
         foreach ($class->getProperties() as $property) {
@@ -70,7 +68,7 @@ class RestServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
-                throw new NotXMLFieldException($message);
+                throw new NotJSONFieldException($message);
             }
             $field = $fieldAnnotation->getName();
             $value = null;
