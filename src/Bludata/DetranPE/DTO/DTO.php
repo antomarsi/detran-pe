@@ -11,16 +11,6 @@ abstract class DTO implements DTOInterface
 {
     use AttributesTrait;
 
-    /**
-     * @Field(name="Confirmacao")
-     */
-    protected $confirmacao;
-
-    /**
-     * @Field(name="DescricaoErro")
-     */
-    protected $descricaoErro;
-
     public function __call($name, $args)
     {
         if (strpos($name, 'set') === 0) {
