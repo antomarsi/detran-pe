@@ -7,6 +7,7 @@ use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\Exceptions\InvalidDTOException;
 use Bludata\DetranPE\Exceptions\NotJSONEntityException;
 use Bludata\DetranPE\Exceptions\NotJSONFieldException;
+use Bludata\DetranPE\Exceptions\EmptyResponseDTOException;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
