@@ -79,6 +79,7 @@ class RestServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
+
                 throw new NotJSONFieldException($message);
             }
 
