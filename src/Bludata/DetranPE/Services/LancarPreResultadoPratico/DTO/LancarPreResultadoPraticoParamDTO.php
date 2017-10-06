@@ -63,7 +63,7 @@ final class LancarPreResultadoPraticoParamDTO extends DTO
     /**
      * Código do examinador da rampa.
      *
-     * @Field(name="nExaminadorRampa", order="7, type="integer")
+     * @Field(name="nExaminadorRampa", order=7, type="integer")
      */
     protected $examinadorRampa;
 
