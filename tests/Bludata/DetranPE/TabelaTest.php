@@ -43,7 +43,7 @@ class TabelaTest extends TestCase
     public function testGetPassingNullReturnTabela($nomeTabela)
     {
         $tabela = new Tabela($nomeTabela);
-        $this->assertInternalType('array', $tabela->get());
+        $this->assertInttesternalType('array', $tabela->get());
     }
 
     /**

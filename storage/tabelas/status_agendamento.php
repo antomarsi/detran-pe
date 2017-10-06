@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * TABELA - RESULTADO EXAME PSICOLÓGICO/PSICOTÉCNICO
+ */
+
+return [
+    'I' => 'INSERINDO NOVO AGENDAMENTO',
+    'C' => 'CANCELANDO AGENDAMENTO',
+];

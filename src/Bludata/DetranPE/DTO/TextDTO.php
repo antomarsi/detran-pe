@@ -2,8 +2,8 @@
 
 namespace Bludata\DetranPE\DTO;
 
-use Bludata\Common\Annotations\XML\Entity;
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Annotations\JSON\Entity;
+use Bludata\Common\Annotations\JSON\Field;
 
 /**
  * @Entity(name="Text")
@@ -11,7 +11,7 @@ use Bludata\Common\Annotations\XML\Field;
 class TextDTO extends DTO
 {
     /**
-     * @Field(name="Body")
+     * @Field(name="Body", order=0, type="string")
      */
     protected $body;
 }

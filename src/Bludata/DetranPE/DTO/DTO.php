@@ -2,24 +2,19 @@
 
 namespace Bludata\DetranPE\DTO;
 
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Common\Annotations\JSON\Entity;
+use Bludata\Common\Annotations\JSON\Field;
 use Bludata\Common\Traits\AttributesTrait;
+use Bludata\DetranPE\Exceptions\InvalidDTOException;
 use Bludata\DetranPE\Exceptions\MethodNotExistsException;
+use Bludata\DetranPE\Exceptions\NotJSONEntityException;
+use Bludata\DetranPE\Exceptions\NotJSONFieldException;
 use Bludata\DetranPE\Interfaces\DTOInterface;
+use Doctrine\Common\Annotations\AnnotationReader;
 
 abstract class DTO implements DTOInterface
 {
     use AttributesTrait;
-
-    /**
-     * @Field(name="Confirmacao")
-     */
-    protected $confirmacao;
-
-    /**
-     * @Field(name="DescricaoErro")
-     */
-    protected $descricaoErro;
 
     public function __call($name, $args)
     {

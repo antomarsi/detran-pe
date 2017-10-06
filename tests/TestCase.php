@@ -1,8 +1,6 @@
 <?php
 
-use Bludata\DetranPE\Clients\SoapServiceClient;
-use Bludata\DetranPE\Services\AutenticaCliente\AutenticaClienteService;
-use Bludata\DetranPE\Services\AutenticaCliente\DTO\AutenticacaoDTO;
+use Bludata\DetranPE\Clients\RestServiceClient;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase as ParentTestCase;
 
@@ -18,14 +16,9 @@ class TestCase extends ParentTestCase
         $this->faker = Factory::create('pt_BR');
     }
 
-    protected function authWsdlFile()
+    protected function getBaseUrl()
     {
-        return 'http://wsto.detran.to.gov.br/wsAutenticacao/Autenticacao.asmx?WSDL';
-    }
-
-    protected function wsdlFile()
-    {
-        return 'http://wsto.detran.to.gov.br/wsProcessoRenach/ProcessoRenach.asmx?WSDL';
+        return 'http://10.150.235.175:40475/JsonBiometriaPratico.svc';
     }
 
     protected function getMockSoapClientFromWSDL()
@@ -33,35 +26,11 @@ class TestCase extends ParentTestCase
         return $this->getMockFromWsdl($this->wsdlFile());
     }
 
-    protected function getProcessoRenachHash()
+    protected function getRestClient()
     {
         $options = $this->getSoapServiceClientOptions();
-        $authSoapClient = new SoapClient($this->authWsdlFile());
-        $authSoapServiceCliente = new SoapServiceClient($authSoapClient, $options);
-        $authService = new AutenticaClienteService();
 
-        $autenticacao = new AutenticacaoDTO();
-        $autenticacao->setCodigoCliente('BLUDATA');
-        $autenticacao->setCodigoServico('wsProcessoRenach');
-
-        $authClient = new SoapServiceClient($authSoapClient);
-
-        $authResponse = $authClient->dto($autenticacao)
-            ->service($authService)
-            ->call();
-
-        return $authResponse->getNumero();
+        return new RestServiceClient($this->getBaseUrl());
     }
 
-    protected function getSoapServiceClientOptions()
-    {
-        return [
-            'soap_version' => SOAP_1_2,
-            'compression'  => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-            'encoding'     => 'UTF-8',
-            'trace'        => 1,
-            'exceptions'   => true,
-            'cache_wsdl'   => WSDL_CACHE_NONE,
-        ];
-    }
 }
