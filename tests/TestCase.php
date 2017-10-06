@@ -21,15 +21,8 @@ class TestCase extends ParentTestCase
         return 'http://10.150.235.175:40475/JsonBiometriaPratico.svc';
     }
 
-    protected function getMockSoapClientFromWSDL()
-    {
-        return $this->getMockFromWsdl($this->wsdlFile());
-    }
-
     protected function getRestClient()
     {
-        $options = $this->getSoapServiceClientOptions();
-
         return new RestServiceClient($this->getBaseUrl());
     }
 

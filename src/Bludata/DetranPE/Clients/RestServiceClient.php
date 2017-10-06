@@ -110,6 +110,7 @@ class RestServiceClient extends ServiceClient
         }
 
         $url = $this->baseUrl.'/'.$this->getUrl();
+
         try {
             $response = $this->client->request($method, $url, $headers);
         } catch (RequestException $e) {
@@ -157,7 +158,6 @@ class RestServiceClient extends ServiceClient
             $field = $property->getName();
             $array[$fieldAnnotation->getOrder()] = $this->dto->$field;
         }
-
         return $this->service->getName().'/'.implode('/', $array);
     }
 }
