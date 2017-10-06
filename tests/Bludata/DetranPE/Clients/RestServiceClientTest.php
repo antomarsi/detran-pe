@@ -2,7 +2,6 @@
 
 namespace Bludata\Tests\DetranPE\Clients;
 
-use Bludata\DetranPE\Clients\RestServiceClient;
 use TestCase;
 
 class RestServiceClientTest extends TestCase

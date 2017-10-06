@@ -6,7 +6,6 @@ use TestCase;
 
 class HelpersTest extends TestCase
 {
-
     /**
      * @covers ::detranpe_generate_rest_service_client
      *

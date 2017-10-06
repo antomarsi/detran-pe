@@ -25,5 +25,4 @@ class TestCase extends ParentTestCase
     {
         return new RestServiceClient($this->getBaseUrl());
     }
-
 }

@@ -81,6 +81,7 @@ class RestServiceClient extends ServiceClient
                 );
                 throw new NotJSONFieldException($message);
             }
+
             $field = $fieldAnnotation->getName();
             $value = null;
             if (is_object($data)) {
@@ -96,6 +97,7 @@ class RestServiceClient extends ServiceClient
             $setMethod = $instance->setMethod($property->getName());
             $instance->$setMethod($value);
         }
+
         return $instance;
     }
 
@@ -158,6 +160,7 @@ class RestServiceClient extends ServiceClient
             $field = $property->getName();
             $array[$fieldAnnotation->getOrder()] = $this->dto->$field;
         }
+
         return $this->service->getName().'/'.implode('/', $array);
     }
 }
