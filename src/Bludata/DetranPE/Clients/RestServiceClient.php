@@ -28,7 +28,7 @@ class RestServiceClient extends ServiceClient
         $this->baseUrl = $baseUrl;
     }
 
-    public function getBaseUrl($baseUrl)
+    public function getBaseUrl()
     {
         return $this->baseUrl();
     }

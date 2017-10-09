@@ -1,15 +1,15 @@
 <?php
 
-namespace Bludata\DetranPE\Services\LancarPreResultadoPratico\DTO;
+namespace Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa\DTO;
 
 use Bludata\Common\Annotations\JSON\Entity;
 use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
- * @Entity(name="LancarPreResultadoPratico")
+ * @Entity(name="LancarPreResultadoPraticoEmpresa")
  */
-final class LancarPreResultadoPraticoParamDTO extends DTO
+final class LancarPreResultadoPraticoEmpresaParamDTO extends DTO
 {
     /**
      * Número do processo do candidato.
