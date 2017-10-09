@@ -85,8 +85,5 @@ STUBCLASS;
         $client->service($mockService);
 
         $this->assertEquals($mockService->getParamDTOName(), get_class($mockDTO));
-        //$response = $client->call();
-
-        //$this->assertEquals('Some Server Result', $response->getBody());
     }
 }
