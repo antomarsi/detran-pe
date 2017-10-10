@@ -1,17 +1,17 @@
 <?php
 
-namespace Bludata\DetranPE\Services\LancarPreResultadoPratico;
+namespace Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa;
 
 use Bludata\DetranPE\Services\Service;
 
-class LancarPreResultadoPraticoService extends Service
+class LancarPreResultadoPraticoEmpresaService extends Service
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'LancarPreResultadoPratico';
+        return 'LancarPreResultadoPraticoEmpresa';
     }
 
     /**
@@ -19,7 +19,7 @@ class LancarPreResultadoPraticoService extends Service
      */
     public function getParamDTOName()
     {
-        return 'Bludata\DetranPE\Services\LancarPreResultadoPratico\DTO\LancarPreResultadoPraticoParamDTO';
+        return 'Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa\DTO\LancarPreResultadoPraticoEmpresaParamDTO';
     }
 
     /**

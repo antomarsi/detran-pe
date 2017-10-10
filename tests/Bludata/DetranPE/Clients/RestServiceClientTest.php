@@ -2,7 +2,6 @@
 
 namespace Bludata\Tests\DetranPE\Clients;
 
-use Bludata\DetranPE\Clients\RestServiceClient;
 use TestCase;
 
 class RestServiceClientTest extends TestCase
@@ -19,15 +18,14 @@ class RestServiceClientTest extends TestCase
      */
     public function testCalldtoButNotWithServiceThrowsException()
     {
-        $RestClient = $this->createMock('RestClient');
-        $client = new RestServiceClient($RestClient);
+        $client = $this->getRestClient();
         $mockDTO = $this->createMock('Bludata\DetranPE\Interfaces\DTOInterface');
         $client->dto($mockDTO)->call();
     }
 
-    protected function registerXMLEntityStub()
+    protected function registerJSONEntityStub()
     {
-        if (class_exists('Bludata\Tests\DetranPE\Clients\XMLEntityStub')) {
+        if (class_exists('Bludata\Tests\DetranPE\Clients\JSONEntityStub')) {
             return;
         }
 
@@ -37,12 +35,12 @@ class RestServiceClientTest extends TestCase
         use Bludata\DetranPE\DTO\DTO;
 
         /**
-         * @Bludata\Common\Annotations\XML\Entity(name="stub")
+         * @Bludata\Common\Annotations\JSON\Entity(name="stub")
          */
-        class XMLEntityStub extends DTO
+        class JSONEntityStub extends DTO
         {
             /**
-             * @Bludata\Common\Annotations\XML\Field(name="Field")
+             * @Bludata\Common\Annotations\JSON\Field(name="Field", order=0, type="string")
              */
             protected \$field = 'Lorem Ipsum';
         }
@@ -53,12 +51,12 @@ STUBCLASS;
     /**
      * @covers Bludata\DetranPE\Clients\RestServiceClient::call
      * @covers Bludata\DetranPE\Clients\RestServiceClient::functionName
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::toXML
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::toArray
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::extractXMLFromResponse
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::toJSON
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::getBaseUrl
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::setBaseUrl
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::getUrl
      * @covers Bludata\DetranPE\Clients\RestServiceClient::__construct
      * @covers Bludata\DetranPE\Clients\RestServiceClient::createDTOResponse
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::removeEmptyValues
      *
      * @uses Bludata\DetranPE\Clients\RestServiceClient::service
      * @uses Bludata\DetranPE\Clients\RestServiceClient::validService
@@ -67,22 +65,25 @@ STUBCLASS;
      * @uses Bludata\DetranPE\Clients\ServiceClient::validDTO
      * @uses Bludata\DetranPE\DTO\DTO::__call
      */
-    public function testCallWithXMLEntityClassDTO()
+    public function testCallWithJSONEntityClassDTO()
     {
-        $this->registerXMLEntityStub();
-        $mockDTO = new XMLEntityStub();
+        $this->registerJSONEntityStub();
+        $mockDTO = new JSONEntityStub();
 
         $mockService = $this->createMock('Bludata\DetranPE\Interfaces\ServiceInterface');
         $mockService->method('getName')
             ->willReturn('FooService');
         $mockService->method('getResponseDTOName')
             ->willReturn('Bludata\DetranPE\DTO\TextDTO');
+        $mockService->method('getParamDTOName')
+            ->willReturn('Bludata\Tests\DetranPE\Clients\JSONEntityStub');
 
-        $client = new RestServiceClient($restClient);
+        $client = $this->getRestClient();
 
-        $response = $client->dto($mockDTO)
-            ->service($mockService)
-            ->call();
-        $this->assertEquals('Some Server Result', $response->getBody());
+        $client->dto($mockDTO);
+
+        $client->service($mockService);
+
+        $this->assertEquals($mockService->getParamDTOName(), get_class($mockDTO));
     }
 }

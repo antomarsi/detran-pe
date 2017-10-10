@@ -6,7 +6,6 @@ use TestCase;
 
 class HelpersTest extends TestCase
 {
-
     /**
      * @covers ::detranpe_generate_rest_service_client
      *
@@ -17,7 +16,7 @@ class HelpersTest extends TestCase
     public function testDetranpeGenerateRestServiceClient()
     {
         $this->assertTrue(function_exists('detranpe_generate_rest_service_client'), 'Function "detranpe_generate_rest_service_client" must exists');
-        $restServiceClient = detranpe_generate_rest_service_client($wsdlFile);
+        $restServiceClient = detranpe_generate_rest_service_client($this->getBaseUrl());
         $this->assertInstanceOf('Bludata\DetranPE\Clients\RestServiceClient', $restServiceClient);
     }
 }

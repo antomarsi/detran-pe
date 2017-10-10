@@ -28,7 +28,7 @@ class RestServiceClient extends ServiceClient
         $this->baseUrl = $baseUrl;
     }
 
-    public function getBaseUrl($baseUrl)
+    public function getBaseUrl()
     {
         return $this->baseUrl();
     }
@@ -79,8 +79,10 @@ class RestServiceClient extends ServiceClient
                     $property->getName(),
                     $responseDTOClassName
                 );
+
                 throw new NotJSONFieldException($message);
             }
+
             $field = $fieldAnnotation->getName();
             $value = null;
             if (is_object($data)) {
@@ -96,6 +98,7 @@ class RestServiceClient extends ServiceClient
             $setMethod = $instance->setMethod($property->getName());
             $instance->$setMethod($value);
         }
+
         return $instance;
     }
 
@@ -110,6 +113,7 @@ class RestServiceClient extends ServiceClient
         }
 
         $url = $this->baseUrl.'/'.$this->getUrl();
+
         try {
             $response = $this->client->request($method, $url, $headers);
         } catch (RequestException $e) {
