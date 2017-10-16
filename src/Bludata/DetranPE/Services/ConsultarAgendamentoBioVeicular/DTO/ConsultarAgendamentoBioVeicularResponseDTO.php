@@ -77,7 +77,7 @@ final class ConsultarAgendamentoBioVeicularResponseDTO extends DTO
     /**
      * Digital do polegar esquerdo.
      *
-     * @Field(name="IDigitalPolEsq", order=9, type="string")
+     * @Field(name="iDigitalPolEsq", order=9, type="string")
      */
     protected $digitalPolegarEsquerdo;
 

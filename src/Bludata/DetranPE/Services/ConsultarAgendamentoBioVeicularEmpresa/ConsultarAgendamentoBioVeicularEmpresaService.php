@@ -1,17 +1,17 @@
 <?php
 
-namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular;
+namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicularEmpresa;
 
 use Bludata\DetranPE\Services\Service;
 
-class ConsultarAgendamentoBioVeicularService extends Service
+class ConsultarAgendamentoBioVeicularEmpresaService extends Service
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'ConsultarAgendamentoBioVeicular';
+        return 'ConsultarAgendamentoBioVeicularEmpresa';
     }
 
     /**

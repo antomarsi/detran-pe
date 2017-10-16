@@ -24,11 +24,4 @@ final class ConsultarAgendamentoBioVeicularParamDTO extends DTO
      * @Field(name="sFormularioRenach", order=1, type="string")
      */
     protected $renach = '0';
-
-    /**
-     * Código da empresa.
-     *
-     * @Field(name="nEmpresa", order=2, type="integer")
-     */
-    protected $empresa = 2;
 }
