@@ -29,4 +29,12 @@ class AtualizarAgendamentoBioVeicularService extends Service
     {
         return 'Bludata\DetranPE\DTO\TextDTO';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'GET';
+    }
 }

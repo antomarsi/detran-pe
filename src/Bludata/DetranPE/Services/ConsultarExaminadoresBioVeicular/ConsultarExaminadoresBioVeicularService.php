@@ -29,4 +29,12 @@ class ConsultarExaminadoresBioVeicularService extends Service
     {
         return 'Bludata\DetranPE\Services\ConsultarExaminadoresBioVeicular\DTO\ConsultarExaminadoresBioVeicularResponseDTO';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'GET';
+    }
 }

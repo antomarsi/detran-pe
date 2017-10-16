@@ -29,4 +29,12 @@ class ConsultarAgendamentoBioVeicularService extends Service
     {
         return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularResponseDTO';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'GET';
+    }
 }

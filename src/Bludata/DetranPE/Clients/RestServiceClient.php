@@ -38,7 +38,7 @@ class RestServiceClient extends ServiceClient
         return $this->service->getName();
     }
 
-    protected function createDTOResponse($data)
+    public function createDTOResponse($data)
     {
         if (!$data) {
             return;
@@ -102,7 +102,7 @@ class RestServiceClient extends ServiceClient
         return $instance;
     }
 
-    public function call($method = 'GET', $headers = [])
+    public function call($callback = null)
     {
         $this->validServiceOrDie($this->service);
 
@@ -115,15 +115,18 @@ class RestServiceClient extends ServiceClient
         $url = $this->baseUrl.'/'.$this->getUrl();
 
         try {
-            $response = $this->client->request($method, $url, $headers);
+            $response = $this->client->request($this->service->getMethod(), $url, []);
         } catch (RequestException $e) {
             if ($e->hasResponse()) {
                 abort($e->getResponse()->getStatusCode(), Psr7\str($e->getResponse()));
             }
             abort(500, Psr7\str($e->getRequest()));
         }
-
-        return $this->createDTOResponse($response->getBody()->getContents());
+        if (is_callable($callback)) {
+            $callback($response->getBody()->getContents());
+        } else {
+            return $this->createDTOResponse($response->getBody()->getContents());
+        }
     }
 
     public function getUrl()
