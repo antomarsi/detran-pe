@@ -19,7 +19,7 @@ class ConsultarAgendamentoBioVeicularService extends Service
      */
     public function getParamDTOName()
     {
-        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularParamDTO';
+        return 'Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular\DTO\ConsultarAgendamentoBioVeicularParamDTO';
     }
 
     /**
@@ -27,7 +27,7 @@ class ConsultarAgendamentoBioVeicularService extends Service
      */
     public function getResponseDTOName()
     {
-        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\ConsultarAgendamentoBioVeicularResponseDTO';
+        return 'Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular\DTO\ConsultarAgendamentoBioVeicularResponseDTO';
     }
 
     /**
