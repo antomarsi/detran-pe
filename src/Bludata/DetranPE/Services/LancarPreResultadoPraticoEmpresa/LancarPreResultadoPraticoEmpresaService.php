@@ -29,4 +29,12 @@ class LancarPreResultadoPraticoEmpresaService extends Service
     {
         return 'Bludata\DetranPE\DTO\ErroDTO';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'GET';
+    }
 }

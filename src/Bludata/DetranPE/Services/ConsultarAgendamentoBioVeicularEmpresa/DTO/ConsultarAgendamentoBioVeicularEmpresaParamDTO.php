@@ -1,15 +1,15 @@
 <?php
 
-namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicular\DTO;
+namespace Bludata\DetranPE\Services\ConsultarAgendamentoBioVeicularEmpresa\DTO;
 
 use Bludata\Common\Annotations\JSON\Entity;
 use Bludata\Common\Annotations\JSON\Field;
 use Bludata\DetranPE\DTO\DTO;
 
 /**
- * @Entity(name="ConsultarAgendamentoBioVeicular")
+ * @Entity(name="ConsultarAgendamentoBioVeicularEmpresa")
  */
-final class ConsultarAgendamentoBioVeicularParamDTO extends DTO
+final class ConsultarAgendamentoBioVeicularEmpresaParamDTO extends DTO
 {
     /**
      * Ponto de atendimento.
@@ -24,4 +24,10 @@ final class ConsultarAgendamentoBioVeicularParamDTO extends DTO
      * @Field(name="sFormularioRenach", order=1, type="string")
      */
     protected $renach = '0';
+    /**
+     * Código da empresa.
+     *
+     * @Field(name="nEmpresa", order=2, type="integer")
+     */
+    protected $empresa = 2;
 }

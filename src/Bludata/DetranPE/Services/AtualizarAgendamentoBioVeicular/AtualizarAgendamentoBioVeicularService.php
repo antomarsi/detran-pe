@@ -19,7 +19,7 @@ class AtualizarAgendamentoBioVeicularService extends Service
      */
     public function getParamDTOName()
     {
-        return 'Bludata\DetranPE\Services\AutenticaCliente\DTO\AtualizarAgendamentoBioVeicularParamDTO';
+        return 'Bludata\DetranPE\Services\AtualizarAgendamentoBioVeicular\DTO\AtualizarAgendamentoBioVeicularParamDTO';
     }
 
     /**
@@ -28,5 +28,13 @@ class AtualizarAgendamentoBioVeicularService extends Service
     public function getResponseDTOName()
     {
         return 'Bludata\DetranPE\DTO\TextDTO';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'GET';
     }
 }
