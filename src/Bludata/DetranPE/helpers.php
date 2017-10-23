@@ -34,7 +34,7 @@ if (!function_exists('detranpe_storage_path')) {
  *
  * @param $baseUrl Caminho base para as chamadas rest
  */
- if (!function_exists('detranpe_generate_rest_service_client')) {
+if (!function_exists('detranpe_generate_rest_service_client')) {
     function detranpe_generate_rest_service_client($client)
     {
         return new \Bludata\DetranPE\Clients\RestServiceClient($client);

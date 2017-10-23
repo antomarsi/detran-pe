@@ -9,8 +9,8 @@ use Bludata\DetranPE\Exceptions\InvalidDTOException;
 use Bludata\DetranPE\Exceptions\NotJSONEntityException;
 use Bludata\DetranPE\Exceptions\NotJSONFieldException;
 use Doctrine\Common\Annotations\AnnotationReader;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 
 class RestServiceClient extends ServiceClient
