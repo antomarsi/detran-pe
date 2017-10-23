@@ -10,18 +10,19 @@ use Bludata\DetranPE\Exceptions\NotJSONEntityException;
 use Bludata\DetranPE\Exceptions\NotJSONFieldException;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 
 class RestServiceClient extends ServiceClient
 {
     private $baseUrl;
 
-    public function __construct($client)
+    public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
-    public function setClient($client)
+    public function setClient(Client $client)
     {
         $this->client = $client;
     }
