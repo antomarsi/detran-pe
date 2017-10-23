@@ -30,6 +30,7 @@ final class ConsultarExaminadoresBioVeicularResponseDTO extends DTO
      *
      * @Field(name="nUsuario", order=2, type="integer")
      */
+    protected $usuario;
 
     /**
      * Número de cpf do candidato.

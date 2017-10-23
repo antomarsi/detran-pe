@@ -52,8 +52,8 @@ STUBCLASS;
      * @covers Bludata\DetranPE\Clients\RestServiceClient::call
      * @covers Bludata\DetranPE\Clients\RestServiceClient::functionName
      * @covers Bludata\DetranPE\Clients\RestServiceClient::toJSON
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::getBaseUrl
-     * @covers Bludata\DetranPE\Clients\RestServiceClient::setBaseUrl
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::getClient
+     * @covers Bludata\DetranPE\Clients\RestServiceClient::setClient
      * @covers Bludata\DetranPE\Clients\RestServiceClient::getUrl
      * @covers Bludata\DetranPE\Clients\RestServiceClient::__construct
      * @covers Bludata\DetranPE\Clients\RestServiceClient::createDTOResponse
