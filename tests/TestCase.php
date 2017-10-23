@@ -26,10 +26,11 @@ class TestCase extends ParentTestCase
     {
         $mock = new MockHandler([
             new Response(200, []),
-            new RequestException("Error Communicating with Server", new Request('GET', 'test'))
+            new RequestException('Error Communicating with Server', new Request('GET', 'test'))
         ]);
 
         $handler = HandlerStack::create($mock);
+
         return new Client(['handler' => $handler]);
     }
 
