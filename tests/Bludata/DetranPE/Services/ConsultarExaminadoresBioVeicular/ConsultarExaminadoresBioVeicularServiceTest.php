@@ -87,5 +87,4 @@ class ConsultarExaminadoresBioVeicularServiceTest extends TestCase
     {
         $this->assertNotEmpty($this->service->getMethod());
     }
-
 }

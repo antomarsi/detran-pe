@@ -87,5 +87,4 @@ class LancarPreResultadoPraticoEmpresaServiceTest extends TestCase
     {
         $this->assertNotEmpty($this->service->getMethod());
     }
-
 }
