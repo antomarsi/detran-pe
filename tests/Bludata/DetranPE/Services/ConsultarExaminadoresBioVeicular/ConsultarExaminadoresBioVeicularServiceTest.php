@@ -38,7 +38,7 @@ class ConsultarExaminadoresBioVeicularServiceTest extends TestCase
         $this->assertNotEmpty($this->service->getName());
     }
 
-        /**
+    /**
      * @covers Bludata\DetranPE\Services\ConsultarExaminadoresBioVeicular\ConsultarExaminadoresBioVeicularService::getParamDTOName
      */
     public function testHasGetParamDTONameMethod()
@@ -72,7 +72,7 @@ class ConsultarExaminadoresBioVeicularServiceTest extends TestCase
         $this->assertNotEmpty($this->service->getResponseDTOName());
     }
 
-        /**
+    /**
      * @covers Bludata\DetranPE\Services\ConsultarExaminadoresBioVeicular\ConsultarExaminadoresBioVeicularService::getMethod
      */
     public function testHasGetMethodMethod()

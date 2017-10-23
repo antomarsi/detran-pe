@@ -38,7 +38,7 @@ class LancarPreResultadoPraticoEmpresaServiceTest extends TestCase
         $this->assertNotEmpty($this->service->getName());
     }
 
-        /**
+    /**
      * @covers Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa\LancarPreResultadoPraticoEmpresaService::getParamDTOName
      */
     public function testHasGetParamDTONameMethod()
@@ -72,7 +72,7 @@ class LancarPreResultadoPraticoEmpresaServiceTest extends TestCase
         $this->assertNotEmpty($this->service->getResponseDTOName());
     }
 
-        /**
+    /**
      * @covers Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa\LancarPreResultadoPraticoEmpresaService::getMethod
      */
     public function testHasGetMethodMethod()
