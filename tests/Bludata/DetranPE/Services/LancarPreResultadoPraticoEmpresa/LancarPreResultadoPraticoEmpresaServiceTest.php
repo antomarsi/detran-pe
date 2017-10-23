@@ -5,7 +5,6 @@ namespace Bludata\Tests\DetranPE\Services\LancarPreResultadoPraticoEmpresa;
 use Bludata\DetranPE\Services\LancarPreResultadoPraticoEmpresa\LancarPreResultadoPraticoEmpresaService;
 use TestCase;
 
-
 class LancarPreResultadoPraticoEmpresaServiceTest extends TestCase
 {
     protected $service;
@@ -88,4 +87,5 @@ class LancarPreResultadoPraticoEmpresaServiceTest extends TestCase
     {
         $this->assertNotEmpty($this->service->getMethod());
     }
+
 }

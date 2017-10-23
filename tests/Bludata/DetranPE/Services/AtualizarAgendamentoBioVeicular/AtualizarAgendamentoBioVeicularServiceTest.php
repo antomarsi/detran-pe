@@ -5,7 +5,6 @@ namespace Bludata\Tests\DetranPE\Services\AtualizarAgendamentoBioVeicular;
 use Bludata\DetranPE\Services\AtualizarAgendamentoBioVeicular\AtualizarAgendamentoBioVeicularService;
 use TestCase;
 
-
 class AtualizarAgendamentoBioVeicularServiceTest extends TestCase
 {
     protected $service;
@@ -88,4 +87,5 @@ class AtualizarAgendamentoBioVeicularServiceTest extends TestCase
     {
         $this->assertNotEmpty($this->service->getMethod());
     }
+
 }
