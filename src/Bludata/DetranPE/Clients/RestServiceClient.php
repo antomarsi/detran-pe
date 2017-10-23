@@ -17,20 +17,19 @@ class RestServiceClient extends ServiceClient
 {
     private $baseUrl;
 
-    public function __construct($baseUrl = null)
+    public function __construct($client)
     {
-        $this->baseUrl = $baseUrl;
-        $this->client = new Client();
+        $this->client = $client;
     }
 
-    public function setBaseUrl($baseUrl)
+    public function setClient($client)
     {
-        $this->baseUrl = $baseUrl;
+        $this->client = $client;
     }
 
-    public function getBaseUrl()
+    public function getClient()
     {
-        return $this->baseUrl();
+        return $this->client;
     }
 
     public function functionName()
@@ -112,10 +111,8 @@ class RestServiceClient extends ServiceClient
             $this->logger->debug('Sending Data: '.$params);
         }
 
-        $url = $this->baseUrl.'/'.$this->getUrl();
-
         try {
-            $response = $this->client->request($this->service->getMethod(), $url, []);
+            $response = $this->client->request($this->service->getMethod(), $this->getUrl(), []);
         } catch (RequestException $e) {
             if ($e->hasResponse()) {
                 abort($e->getResponse()->getStatusCode(), Psr7\str($e->getResponse()));
