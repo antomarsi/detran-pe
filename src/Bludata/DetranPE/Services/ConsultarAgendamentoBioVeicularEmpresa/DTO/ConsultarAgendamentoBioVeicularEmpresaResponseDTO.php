@@ -21,7 +21,7 @@ final class ConsultarAgendamentoBioVeicularEmpresaResponseDTO extends DTO
     /**
      * Número do processo do candidato.
      *
-     * @Field(name="nProcess", order=1, type="integer")
+     * @Field(name="nProcesso", order=1, type="integer")
      */
     protected $numeroProcesso;
 
@@ -42,7 +42,7 @@ final class ConsultarAgendamentoBioVeicularEmpresaResponseDTO extends DTO
     /**
      * Data do agendamento.
      *
-     * @Field(name="dDisponibilidade", order=4, type="datetime")
+     * @Field(name="disponibilidade", order=4, type="datetime")
      */
     protected $disponibilidade;
 

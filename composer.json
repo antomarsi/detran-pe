@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "library",
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=5.6.4",
         "bludata/base": "v2.7.*",
         "illuminate/support": ">=v5.1.0",
         "psr/log": "^1.0",

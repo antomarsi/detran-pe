@@ -120,7 +120,7 @@ class RestServiceClient extends ServiceClient
             abort(500, Psr7\str($e->getRequest()));
         }
         if (is_callable($callback)) {
-            $callback($response->getBody()->getContents());
+            return $callback($response->getBody()->getContents());
         } else {
             return $this->createDTOResponse($response->getBody()->getContents());
         }
